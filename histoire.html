@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Histoire — NEXOVA depuis 1970 | Groupe FNEXOVA</title>
+  <meta name="description"
+    content="Depuis 1970, NEXOVA écrit l'histoire de l'agence de communication franciliene. Découvrez notre parcours, nos valeurs et notre appartenance au Groupe FNEXOVA — 18 entreprises, 900 collaborateurs.">
+  <meta name="keywords"
+    content="histoire NEXOVA, agence de communication depuis 1970, groupe FNEXOVA, Île-de-France, Paris, agence de communication historique, 60 ans création">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.nexova.fr/histoire.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.nexova.fr/histoire.html">
+  <meta property="og:title" content="Notre Histoire — NEXOVA depuis 1970">
+  <meta property="og:description" content="60 ans d'expertise en agence de communication franciliene. Membre du Groupe FNEXOVA.">
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"Histoire d'NEXOVA","url":"https://www.nexova.fr/histoire.html","isPartOf":{"@type":"WebSite","name":"NEXOVA","url":"https://www.nexova.fr"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ADN */
+    .adn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center
+    }
+
+    .adn-frame {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--clr-rose-light), rgba(194, 24, 91, .04));
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(194, 24, 91, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: .5rem;
+      color: var(--clr-rose);
+      font-size: var(--fs-xs);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      position: relative
+    }
+
+    .adn-frame svg {
+      width: 40px;
+      height: 40px;
+      opacity: .4
+    }
+
+    .adn-stamp {
+      position: absolute;
+      bottom: -1rem;
+      left: -1rem;
+      background: var(--clr-ink);
+      color: white;
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .adn-stamp .big {
+      font-family: var(--ff-title);
+      font-size: var(--fs-2xl);
+      line-height: 1;
+      color: var(--clr-rose)
+    }
+
+    .adn-stamp .small {
+      font-size: var(--fs-xs);
+      opacity: .7;
+      margin-top: .2rem
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 3rem;
+      margin-top: 3rem
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--clr-rose-light), var(--clr-rose), var(--clr-rose-light))
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 3rem
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0
+    }
+
+    .timeline-item__dot {
+      position: absolute;
+      left: -3rem;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--clr-rose);
+      border: 3px solid var(--clr-bg);
+      box-shadow: 0 0 0 3px var(--clr-rose);
+      transform: translateX(-50%)
+    }
+
+    .timeline-item__year {
+      font-family: var(--ff-title);
+      font-size: var(--fs-lg);
+      color: var(--clr-rose);
+      margin-bottom: .25rem;
+      line-height: 1
+    }
+
+    .timeline-item__title {
+      font-size: var(--fs-base);
+      font-weight: var(--fw-semi);
+      color: var(--clr-ink);
+      margin-bottom: .4rem
+    }
+
+    .timeline-item__text {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.7
+    }
+
+    /* FNEXOVA */
+    .fnexova-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center
+    }
+
+    .fnexova-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem
+    }
+
+    .fnexova-stat {
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center
+    }
+
+    .fnexova-stat__num {
+      font-family: var(--ff-title);
+      font-size: var(--fs-2xl);
+      color: var(--clr-rose);
+      line-height: 1;
+      margin-bottom: .25rem
+    }
+
+    .fnexova-stat__label {
+      font-size: var(--fs-xs);
+      color: var(--clr-ink-muted)
+    }
+
+    .fnexova-logo-frame {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, rgba(194, 24, 91, .04), var(--clr-rose-light));
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(194, 24, 91, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: .75rem;
+      color: var(--clr-rose);
+      font-size: var(--fs-sm);
+      letter-spacing: .04em
+    }
+
+    .fnexova-logo-frame svg {
+      width: 48px;
+      height: 48px;
+      opacity: .4
+    }
+
+    /* Valeurs */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem
+    }
+
+    .value-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition)
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--clr-rose)
+    }
+
+    .value-card__icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--clr-rose-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      color: var(--clr-rose);
+      transition: background var(--transition)
+    }
+
+    .value-card:hover .value-card__icon {
+      background: var(--clr-rose);
+      color: white
+    }
+
+    .value-card__icon svg {
+      width: 28px;
+      height: 28px
+    }
+
+    .value-card h3 {
+      font-size: var(--fs-md);
+      margin-bottom: .5rem
+    }
+
+    .value-card p {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.7
+    }
+
+    .cta-section {
+      background: var(--clr-ink);
+      padding-block: 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(194, 24, 91, .12) 0%, transparent 70%);
+      pointer-events: none
+    }
+
+    .cta-section__inner {
+      position: relative;
+      z-index: 1
+    }
+
+    @media(max-width:1024px) {
+
+      .adn-grid,
+      .fnexova-block {
+        grid-template-columns: 1fr;
+        gap: 2.5rem
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:600px) {
+      .values-grid {
+        grid-template-columns: 1fr
+      }
+
+      .fnexova-stats {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="interactions.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <!-- Curseur personnalisé -->
+  <div class="cursor-crop-marks" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="index.html" class="nav__logo" aria-label="NEXOVA — Accueil">
+            <img src="Photo/Logo_La Déclinaison Secondaire.png" alt="NEXOVA" class="nav__logo-img">
+          </a>
+          <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="expertise.html" class="nav__link">Expertises</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="nav__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary nav__cta"><svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>Demander un devis</a>
+          <button class="nav__burger" aria-label="Ouvrir le menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <a href="index.html" class="nav__mobile-link">Accueil</a>
+      <a href="expertise.html" class="nav__mobile-link">Expertises</a>
+      <a href="realisations.html" class="nav__mobile-link">Réalisations</a>
+      <a href="histoire.html" class="nav__mobile-link active">Notre Histoire</a>
+      <a href="contact.html" class="nav__mobile-link">Contact</a>
+      <a href="contact.html" class="btn btn-primary mt-4">Demander un devis</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero-secondary section--alt">
+      <div class="container">
+        <span class="section-label hero-secondary__label" aria-hidden="true">Depuis 1970</span>
+        <h1 class="hero-secondary__title">Notre Histoire</h1>
+        <p class="hero-secondary__sub">Soixante ans d'agence de communication franciliene, une passion transmise, une ambition partagée
+          au sein du Groupe FNEXOVA.</p>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a><span aria-hidden="true">›</span><span aria-current="page">Notre
+            Histoire</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ADN -->
+    <section class="section" aria-labelledby="adn-title">
+      <div class="container">
+        <div class="adn-grid">
+          <div class="reveal-left">
+            <div class="adn-frame">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo fondateurs / studio</span>
+              <div class="adn-stamp" aria-hidden="true">
+                <p class="big">1970</p>
+                <p class="small">Fondée en</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-right">
+            <span class="section-label" aria-hidden="true">Notre ADN</span>
+            <h2 class="section-title" id="adn-title">Une agence de communication<br>ancrée en Île-de-France</h2>
+            <p class="section-intro" style="margin-bottom:1.5rem;">C'est en 1970 que l'histoire d'NEXOVA commence à
+              Paris, au cœur de la métropole rouennaise. Depuis plus de soixante ans, nous mettons
+              notre expertise industrielle et notre passion du métier au service d'un seul objectif : transformer vos
+              idées en créations qui vous ressemblent.</p>
+            <p style="font-size:var(--fs-sm);color:var(--clr-ink-soft);line-height:1.8;">Aujourd'hui, NEXOVA est bien
+              plus qu'une agence de communication. C'est un partenaire de confiance pour des centaines d'entreprises francilienes et
+              nationales qui nous font confiance pour leurs projets de communication support visuele les plus ambitieux.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section section--alt" aria-labelledby="timeline-title">
+      <div class="container">
+        <div style="max-width:700px;margin-inline:auto;">
+          <span class="section-label reveal" aria-hidden="true">Parcours</span>
+          <h2 class="section-title reveal" id="timeline-title">60 ans d'histoire</h2>
+          <p class="section-intro reveal" style="margin-bottom:0;">Les grandes étapes qui ont forgé l'NEXOVA
+            d'aujourd'hui.</p>
+          <div class="timeline" role="list">
+
+            <div class="timeline-item reveal" role="listitem">
+              <div class="timeline-item__dot" aria-hidden="true"></div>
+              <p class="timeline-item__year">1970</p>
+              <p class="timeline-item__title">Fondation d'NEXOVA</p>
+              <p class="timeline-item__text">Création de l'agence de communication NEXOVA à Paris. Les fondateurs
+                posent les bases d'un outil industriel dédié à l'création print, avec une exigence dès le départ :
+                qualité et fiabilité.</p>
+            </div>
+
+            <div class="timeline-item reveal" role="listitem">
+              <div class="timeline-item__dot" aria-hidden="true"></div>
+              <p class="timeline-item__year">Années 70</p>
+              <p class="timeline-item__title">Développement des capacités print</p>
+              <p class="timeline-item__text">Investissement dans de nouvelles équipements print et développement de la
+                clientèle régionale. NEXOVA s'impose comme une référence de l'agence de communication franciliene.</p>
+            </div>
+
+            <div class="timeline-item reveal" role="listitem">
+              <div class="timeline-item__dot" aria-hidden="true"></div>
+              <p class="timeline-item__year">Années 80–90</p>
+              <p class="timeline-item__title">Modernisation & conception graphique intégré</p>
+              <p class="timeline-item__text">Intégration du conception graphique informatisé et adoption des premières technologies
+                de composition numérique. NEXOVA accompagne la révolution graphique de l'ère Macintosh.</p>
+            </div>
+
+            <div class="timeline-item reveal" role="listitem">
+              <div class="timeline-item__dot" aria-hidden="true"></div>
+              <p class="timeline-item__year">Années 2000</p>
+              <p class="timeline-item__title">Grand format & nouvelles finitions</p>
+              <p class="timeline-item__text">Acquisition de équipements grand format jusqu'au format A0 cm.
+                Développement des studios de finitions : finition premium, vernis mat, production complet.</p>
+            </div>
+
+            <div class="timeline-item reveal" role="listitem">
+              <div class="timeline-item__dot" aria-hidden="true"></div>
+              <p class="timeline-item__year">2010s</p>
+              <p class="timeline-item__title">Intégration au Groupe FNEXOVA</p>
+              <p class="timeline-item__text">NEXOVA rejoint le Groupe FNEXOVA, renforçant ainsi ses capacités et son
+                réseau. L'appartenance au groupe ouvre de nouvelles perspectives : partenariats, technologies, marchés.
+              </p>
+            </div>
+
+            <div class="timeline-item reveal" role="listitem">
+              <div class="timeline-item__dot" aria-hidden="true"></div>
+              <p class="timeline-item__year">Aujourd'hui</p>
+              <p class="timeline-item__title">Plus de 60 ans d'expertise</p>
+              <p class="timeline-item__text">NEXOVA continue d'investir dans les technologies d'création les plus
+                avancées tout en préservant l'exigence artisanale qui fait sa réputation. Membre d'un groupe de 18
+                entreprises et 900 collaborateurs.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Groupe FNEXOVA -->
+    <section class="section" aria-labelledby="fnexova-title">
+      <div class="container">
+        <div class="fnexova-block">
+          <div class="reveal-left">
+            <span class="section-label" aria-hidden="true">Notre groupe</span>
+            <h2 class="section-title" id="fnexova-title">Le Groupe FNEXOVA</h2>
+            <p class="section-intro" style="margin-bottom:1.5rem;">NEXOVA est membre du Groupe FNEXOVA, un ensemble solide
+              et structuré de 18 entreprises spécialisées dans la communication support visuele et visuelle, réparties sur
+              l'ensemble du territoire.</p>
+            <p style="font-size:var(--fs-sm);color:var(--clr-ink-soft);line-height:1.8;margin-bottom:2rem;">Cette
+              appartenance nous permet de proposer une offre élargie à nos clients, de mutualiser les investissements
+              technologiques, et de bénéficier de l'expertise croisée de 900 professionnels de l'création et de la
+              communication.</p>
+            <a href="https://www.fnexova.fr" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Visiter fnexova.fr
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+            <div class="fnexova-stats">
+              <div class="fnexova-stat">
+                <p class="fnexova-stat__num" data-count="18" data-suffix="">0</p>
+                <p class="fnexova-stat__label">Entreprises du groupe</p>
+              </div>
+              <div class="fnexova-stat">
+                <p class="fnexova-stat__num" data-count="900" data-suffix="+">0+</p>
+                <p class="fnexova-stat__label">Collaborateurs</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-right">
+            <div class="fnexova-logo-frame">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              <span>Logo Groupe FNEXOVA</span>
+            </div>
+            <!-- Grille logos partenaires -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.5rem;"
+              aria-label="Logos des entreprises du groupe">
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 1</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 2</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 3</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 4</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 5</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 6</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 7</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 8</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 9</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 10</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 11</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 12</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 13</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 14</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 15</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 16</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 17</div>
+              <div style="aspect-ratio:2/1;background:var(--clr-bg);border:1px solid var(--clr-border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--clr-ink-muted);letter-spacing:.04em;">Logo 18</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Machines -->
+    <section class="section" aria-labelledby="machines-hist-title">
+      <div class="container">
+        <div class="adn-grid">
+          <div class="reveal-right">
+            <span class="section-label" aria-hidden="true">Notre outil de production</span>
+            <h2 class="section-title" id="machines-hist-title">Des machines<br>au service de votre exigence</h2>
+            <p class="section-intro" style="margin-bottom:1.5rem;">Au fil des décennies, nous avons constamment investi dans notre parc machines. Aujourd'hui, nos équipements print peuvent atteindre le format A0 cm — l'un des plus grands formats disponibles en agence de communication industrielle — pour des projets d'une régularité et d'une fidélité chromatique irréprochables.</p>
+            <p style="font-size:var(--fs-sm);color:var(--clr-ink-soft);line-height:1.8;margin-bottom:2rem;">De l'studio conception graphique à la salle de finitions, chaque poste de travail est tenu par des techniciens formés sur le long terme. Ce n'est pas qu'une question d'équipement — c'est aussi l'expérience de ceux qui font tourner les machines tous les matins.</p>
+            <a href="expertise.html" class="btn btn-primary">
+              Voir notre processus de production
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="reveal-left">
+            <div class="adn-frame">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+              <span>Photo équipements NEXOVA</span>
+              <div class="adn-stamp" aria-hidden="true">
+                <p class="big">A0</p>
+                <p class="small">Format max</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valeurs -->
+    <section class="section section--alt" aria-labelledby="valeurs-title">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-label reveal" aria-hidden="true" style="justify-content:center;">Ce qui nous guide</span>
+          <h2 class="section-title reveal" id="valeurs-title">Nos valeurs</h2>
+          <p class="section-intro reveal" style="margin-inline:auto;">Ces valeurs fondatrices guident chacune de nos
+            décisions, chacun de nos projets depuis 1970.</p>
+        </div>
+        <div class="values-grid">
+          <article class="value-card reveal">
+            <div class="value-card__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <h3>Qualité</h3>
+            <p>Chaque création est soumise à des contrôles rigoureux. La qualité n'est pas une option, c'est notre
+              promesse depuis 1970.</p>
+          </article>
+          <article class="value-card reveal reveal-delay-1">
+            <div class="value-card__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg></div>
+            <h3>Proximité</h3>
+            <p>Ancrés en Île-de-France depuis toujours, nous entretenons des relations humaines et directes avec chacun de
+              nos clients.</p>
+          </article>
+          <article class="value-card reveal reveal-delay-2">
+            <div class="value-card__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+              </svg></div>
+            <h3>Innovation</h3>
+            <p>Investissement continu dans les nouvelles technologies d'création pour rester à la pointe et vous
+              offrir les meilleures solutions.</p>
+          </article>
+          <article class="value-card reveal reveal-delay-3">
+            <div class="value-card__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg></div>
+            <h3>Savoir-faire</h3>
+            <p>Six décennies d'expertise transmises et enrichies par chaque génération de techniciens et d'communicants
+              passionnés.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="cta-hist-title">
+      <div class="container cta-section__inner">
+        <h2 class="reveal" id="cta-hist-title" style="color:white;">Écrivons ensemble<br>la prochaine page.</h2>
+        <p class="reveal reveal-delay-1"
+          style="color:rgba(255,255,255,.7);font-size:var(--fs-md);margin-bottom:2.5rem;max-width:48ch;margin-inline:auto;">
+          Rejoignez les centaines d'entreprises qui font confiance à NEXOVA pour leurs projets d'création.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-2">
+          <a href="contact.html" class="btn btn-primary">Démarrer un projet</a>
+          <a href="expertise.html" class="btn btn-outline-white">Nos expertises</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__grid">
+
+        <!-- Colonne marque -->
+        <div>
+          <img src="Photo/Logo_La Déclinaison Responsive.png" alt="Logo nexova" width="150">
+          <p class="footer__tagline">Transforme des pages blanches en projets qui vous ressemblent. Depuis 1970, au
+            service de vos créations les plus exigeantes.</p>
+          <nav class="footer__social" aria-label="Réseaux sociaux NEXOVA">
+            <a href="#" class="footer__social-link" target="_blank"
+              rel="noopener noreferrer" aria-label="NEXOVA sur LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="NEXOVA sur Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Navigation -->
+        <nav aria-label="Navigation pied de page">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link">Accueil</a></li>
+            <li><a href="expertise.html" class="footer__link">Expertises</a></li>
+            <li><a href="realisations.html" class="footer__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="footer__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="footer__link">Contact & Devis</a></li>
+          </ul>
+        </nav>
+
+        <!-- Expertises -->
+        <nav aria-label="Nos expertises">
+          <p class="footer__col-title">Expertises</p>
+          <ul class="footer__links" role="list">
+            <li><a href="expertise.html" class="footer__link">Création Print</a></li>
+            <li><a href="expertise.html" class="footer__link">Grands Formats</a></li>
+            <li><a href="expertise.html" class="footer__link">Conception graphique</a></li>
+            <li><a href="expertise.html" class="footer__link">Finition premium & Vernis mat</a></li>
+            <li><a href="expertise.html" class="footer__link">Production</a></li>
+            <li><a href="expertise.html" class="footer__link">Marquage & Embossage</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact -->
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <address class="footer__address">
+            <strong>NEXOVA</strong>
+            12 Rue des Studios<br>
+            75009 Paris<br><br>
+            <a href="tel:+33142001122">01 42 00 11 22</a><br>
+            <a href="mailto:contact@nexova-agence de communication.fr">contact@nexova-agence de communication.fr</a><br><br>
+            <span>Lun–Ven : 8h00–18h00</span>
+          </address>
+          <div style="margin-top:1.25rem;">
+            <a href="https://www.fnexova.fr" class="footer__link" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:.4rem;">
+              Groupe FNEXOVA
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" style="width:12px;height:12px;" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bas de footer -->
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          &copy; <span id="current-year">2026</span> NEXOVA. Tous droits réservés.
+        </p>
+        <nav class="footer__legal" aria-label="Liens légaux">
+          <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
+          <a href="cgv.html" class="footer__legal-link">CGV</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Retour en haut"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </svg></button>
+  <button class="a11y-btn" aria-label="Options d'accessibilité" aria-expanded="false" aria-controls="a11y-panel"><svg
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      aria-hidden="true">
+      <circle cx="12" cy="4" r="2" />
+      <path
+        d="M15.89 8.11C15.5 7.72 14.83 7 13 7h-2c-1.83 0-2.5.72-2.89 1.11l-3.31 3.3a.996.996 0 1 0 1.41 1.41L8 11v10h2v-5h4v5h2V11l1.79 1.82a.996.996 0 1 0 1.41-1.41l-3.31-3.31z" />
+    </svg></button>
+  <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Options d'accessibilité">
+    <p class="a11y-panel__title">Accessibilité</p>
+    <div class="a11y-option"><span>Taille du texte</span>
+      <div class="a11y-toggle"><button id="font-decrease" aria-label="Réduire">A−</button><button id="font-reset"
+          aria-label="Réinitialiser">A</button><button id="font-increase" aria-label="Augmenter">A+</button></div>
+    </div>
+    <div class="a11y-option"><span>Contraste élevé</span>
+      <div class="a11y-toggle"><button id="high-contrast" style="width:auto;padding:0 .75rem;">Activer</button></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script src="interactions.js" defer></script>
+</body>
+</html>

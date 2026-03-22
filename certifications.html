@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications & Engagements — NEXOVA Agence de communication</title>
+  <meta name="description"
+    content="NEXOVA est certifiée ISO 14001, B Corp, ISO 26000, ISO 9001, Label Excellence et Bilan Carbone. Découvrez nos engagements qualité et environnementaux en agence de communication depuis 1970.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.nexova.fr/certifications.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* ── GRILLE CERTIFICATIONS ───────────────────────────────── */
+    .certif-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .certif-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .certif-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--clr-rose);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .certif-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+    .certif-card:hover::before { transform: scaleX(1); }
+
+    .certif-card__icon {
+      width: 64px; height: 64px;
+      background: var(--clr-rose-light);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-rose);
+      margin-bottom: 1.5rem;
+    }
+    .certif-card__icon svg { width: 28px; height: 28px; }
+    .certif-card__label {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-semi);
+      color: var(--clr-rose);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: .4rem;
+    }
+    .certif-card__name {
+      font-family: var(--ff-title);
+      font-size: var(--fs-xl);
+      color: var(--clr-ink);
+      margin-bottom: .75rem;
+    }
+    .certif-card__desc {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.8;
+    }
+    .certif-card__year {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: 1.25rem;
+      font-size: var(--fs-xs);
+      color: var(--clr-ink-muted);
+    }
+    .certif-card__year::before {
+      content: '';
+      width: 16px; height: 2px;
+      background: var(--clr-border);
+      display: inline-block;
+    }
+
+    /* ── SECTION BILAN RSE ───────────────────────────────────── */
+    .rse-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .rse-item {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-lg);
+    }
+    .rse-item__number {
+      font-family: var(--ff-title);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: var(--clr-rose);
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+    .rse-item__label {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.5;
+    }
+
+    /* ── SECTION DÉMARCHE ────────────────────────────────────── */
+    .demarche-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .demarche-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .demarche-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .demarche-item__icon {
+      width: 40px; height: 40px;
+      background: var(--clr-rose-light);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-rose);
+      flex-shrink: 0;
+    }
+    .demarche-item__icon svg { width: 18px; height: 18px; }
+    .demarche-item__text strong {
+      display: block;
+      font-size: var(--fs-base);
+      color: var(--clr-ink);
+      margin-bottom: .2rem;
+    }
+    .demarche-item__text span {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.6;
+    }
+    .demarche-visual {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--clr-rose-light), rgba(194,24,91,.04));
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(194,24,91,.3);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: .5rem;
+      color: var(--clr-rose); font-size: var(--fs-xs);
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+    .demarche-visual svg { width: 40px; height: 40px; opacity: .35; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .certif-grid  { grid-template-columns: repeat(2, 1fr); }
+      .rse-grid     { grid-template-columns: repeat(2, 1fr); }
+      .demarche-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 600px) {
+      .certif-grid { grid-template-columns: 1fr; }
+      .rse-grid    { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" href="interactions.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <div class="cursor-crop-marks" aria-hidden="true"></div>
+
+  <!-- ══ NAVIGATION ══════════════════════════════════════════ -->
+  <header>
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="index.html" class="nav__logo" aria-label="NEXOVA — Accueil">
+            <img src="Photo/Logo_La Déclinaison Secondaire.png" alt="NEXOVA" class="nav__logo-img">
+          </a>
+          <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="expertise.html" class="nav__link">Expertises</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="nav__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary nav__cta">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            Demander un devis
+          </a>
+          <button class="nav__burger" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <a href="index.html" class="nav__mobile-link">Accueil</a>
+      <a href="expertise.html" class="nav__mobile-link">Expertises</a>
+      <a href="realisations.html" class="nav__mobile-link">Réalisations</a>
+      <a href="histoire.html" class="nav__mobile-link">Notre Histoire</a>
+      <a href="contact.html" class="nav__mobile-link">Contact</a>
+      <a href="contact.html" class="btn btn-primary mt-4">Demander un devis</a>
+    </div>
+  </header>
+
+  <!-- ══ CONTENU ═════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- Hero secondaire -->
+    <section class="hero-secondary section--alt">
+      <div class="container">
+        <span class="section-label hero-secondary__label" aria-hidden="true">Qualité & Environnement</span>
+        <h1 class="hero-secondary__title">Certifications &amp; engagements</h1>
+        <p class="hero-secondary__sub">
+          Nos certifications ne sont pas des décorations. Ce sont des engagements vérifiés et renouvelés chaque année — envers la qualité de nos créations, envers l'environnement, envers vous.
+        </p>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Certifications</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ── CHIFFRES RSE ──────────────────────────────────────── -->
+    <section class="section" aria-labelledby="rse-title">
+      <div class="container">
+        <h2 id="rse-title" class="visually-hidden">Chiffres clés RSE NEXOVA</h2>
+        <div class="rse-grid">
+          <div class="rse-item reveal">
+            <p class="rse-item__number">6</p>
+            <p class="rse-item__label">Labels &amp; certifications actifs</p>
+          </div>
+          <div class="rse-item reveal reveal-delay-1">
+            <p class="rse-item__number">100%</p>
+            <p class="rse-item__label">Papiers issus de forêts gérées durablement (B Corp/ISO 26000)</p>
+          </div>
+          <div class="rse-item reveal reveal-delay-2">
+            <p class="rse-item__number">ISO</p>
+            <p class="rse-item__label">12647-2 — Norme chromatique internationale</p>
+          </div>
+          <div class="rse-item reveal reveal-delay-3">
+            <p class="rse-item__number">2023</p>
+            <p class="rse-item__label">Obtention du label Label Excellence</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LISTE DES CERTIFICATIONS ─────────────────────────── -->
+    <section class="section section--alt" aria-labelledby="certif-title">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:1rem;">
+          <span class="section-label reveal" aria-hidden="true">Vérifiés et reconnus</span>
+          <h2 class="section-title reveal" id="certif-title">Nos certifications</h2>
+          <p class="section-intro reveal" style="margin-inline:auto;">
+            Chaque certification implique des audits réguliers, des procédures internes et des investissements. Ce n'est pas une case à cocher — c'est un état d'esprit.
+          </p>
+        </div>
+
+        <div class="certif-grid">
+
+          <!-- ISO 14001 -->
+          <article class="certif-card reveal">
+            <div class="certif-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M2 22c1.25-1.25 2.5-2.5 4-3 1.75-.5 2.75.25 4.5.25S13.25 18.5 15 18s3.25-1.5 4.5-2.75C21.25 13.5 22 11.5 22 9.5 22 5.36 18.64 2 14.5 2c-2.5 0-4.75 1.25-6.25 3.25"/>
+                <path d="M2 22c0-5 2-9.5 6-12"/>
+              </svg>
+            </div>
+            <p class="certif-card__label">Environnement</p>
+            <h3 class="certif-card__name">ISO 14001</h3>
+            <p class="certif-card__desc">
+              Label national de référence pour les agence de communications engagées dans une démarche environnementale. Il garantit une gestion rigoureuse des déchets dangereux, l'absence de produits toxiques rejetés et le contrôle des consommations d'eau et d'énergie.
+            </p>
+            <p class="certif-card__year">Certifié depuis plusieurs années — renouvelé annuellement</p>
+          </article>
+
+          <!-- B Corp -->
+          <article class="certif-card reveal reveal-delay-1">
+            <div class="certif-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <p class="certif-card__label">Forêts durables</p>
+            <h3 class="certif-card__name">B Corp</h3>
+            <p class="certif-card__desc">
+              Le Programme de Reconnaissance des Certifications Forestières garantit que les papiers utilisés proviennent de forêts gérées durablement. En choisissant NEXOVA, vous vous assurez que vos créations ne contribuent pas à la déforestation.
+            </p>
+            <p class="certif-card__year">Chaîne de contrôle certifiée</p>
+          </article>
+
+          <!-- ISO 26000 -->
+          <article class="certif-card reveal reveal-delay-2">
+            <div class="certif-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <p class="certif-card__label">Forêts durables</p>
+            <h3 class="certif-card__name">ISO 26000</h3>
+            <p class="certif-card__desc">
+              Le Forest Stewardship Council est la certification forestière la plus reconnue mondialement. Elle atteste que les papiers que nous utilisons respectent les populations locales, les travailleurs forestiers et l'environnement.
+            </p>
+            <p class="certif-card__year">Certification chaîne de contrôle active</p>
+          </article>
+
+          <!-- ISO 9001 -->
+          <article class="certif-card reveal">
+            <div class="certif-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <p class="certif-card__label">Qualité chromatique</p>
+            <h3 class="certif-card__name">ISO 9001</h3>
+            <p class="certif-card__desc">
+              Norme internationale qui définit les conditions de référence pour l'création print en quadri. Elle garantit la reproductibilité et la fidélité des couleurs d'un projet à l'autre, et d'un communicant à l'autre. Vos couleurs sont celles que vous avez approuvées.
+            </p>
+            <p class="certif-card__year">Certifié — Contrôle qualitatif systématique</p>
+          </article>
+
+          <!-- Label Excellence -->
+          <article class="certif-card reveal reveal-delay-1">
+            <div class="certif-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <p class="certif-card__label">Excellence &amp; luxe</p>
+            <h3 class="certif-card__name">Label Excellence</h3>
+            <p class="certif-card__desc">
+              Label obtenu en 2023, Label Excellence distingue les agence de communications capables de répondre aux exigences de qualité de la haute industrie et des maisons de luxe. Il couvre les finitions haut de gamme : vernis mat, finition premium velours, marquage à chaud, embossage et conformité chromatique rigoureuse.
+            </p>
+            <p class="certif-card__year">Obtenu en 2023</p>
+          </article>
+
+          <!-- CLIMATECALC -->
+          <article class="certif-card reveal reveal-delay-2">
+            <div class="certif-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+              </svg>
+            </div>
+            <p class="certif-card__label">Empreinte carbone</p>
+            <h3 class="certif-card__name">Bilan Carbone</h3>
+            <p class="certif-card__desc">
+              Outil européen de calcul de l'empreinte carbone des produits support visuels. Bilan Carbone nous permet de mesurer et de communiquer à nos clients l'impact CO₂ de chaque production, et d'identifier les postes d'amélioration pour réduire notre empreinte au fil du temps.
+            </p>
+            <p class="certif-card__year">Calculateur carbone certifié</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DÉMARCHE RSE ───────────────────────────────────────── -->
+    <section class="section" aria-labelledby="demarche-title">
+      <div class="container">
+        <div class="demarche-inner">
+
+          <div class="demarche-visual reveal-left">
+            <!-- Remplacez par une photo de l'studio ou des machines : <img src="Photo/studio-rse.jpg" alt="Studio NEXOVA — démarche RSE"> -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Photo à ajouter</span>
+          </div>
+
+          <div class="reveal-right">
+            <span class="section-label" aria-hidden="true">Notre démarche</span>
+            <h2 class="section-title" id="demarche-title">Au-delà des labels,<br>des gestes concrets</h2>
+            <p class="section-intro">
+              Les certifications cadrent notre démarche. Mais au quotidien, c'est l'ensemble de l'équipe qui fait des choix responsables.
+            </p>
+            <div class="demarche-list">
+              <div class="demarche-item">
+                <div class="demarche-item__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 22c1.25-1.25 2.5-2.5 4-3 1.75-.5 2.75.25 4.5.25S13.25 18.5 15 18s3.25-1.5 4.5-2.75C21.25 13.5 22 11.5 22 9.5 22 5.36 18.64 2 14.5 2c-2.5 0-4.75 1.25-6.25 3.25"/><path d="M2 22c0-5 2-9.5 6-12"/></svg>
+                </div>
+                <div class="demarche-item__text">
+                  <strong>Encres végétales &amp; sans solvants</strong>
+                  <span>Nos encres print sont à base d'huiles végétales, sans composants à faible impact — moins nocives pour l'environnement et pour nos équipes.</span>
+                </div>
+              </div>
+              <div class="demarche-item">
+                <div class="demarche-item__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                </div>
+                <div class="demarche-item__text">
+                  <strong>Gestion rigoureuse des déchets</strong>
+                  <span>Tri sélectif systématique : papier, plastique, cartouches, produits de nettoyage — chaque flux a son circuit de recyclage ou de traitement agréé.</span>
+                </div>
+              </div>
+              <div class="demarche-item">
+                <div class="demarche-item__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="demarche-item__text">
+                  <strong>Optimisation des mises en page</strong>
+                  <span>Notre studio conception graphique optimise chaque maquettage pour réduire les ressources inutilisées au minimum. Moins de gâche, moins de coût, moins de déchets.</span>
+                </div>
+              </div>
+              <div class="demarche-item">
+                <div class="demarche-item__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div class="demarche-item__text">
+                  <strong>validation client en priorité</strong>
+                  <span>Nous favorisons les validations client numériques pour réduire les créations de validation. Quand un BAT papier est nécessaire, il est support visuel sur chutes.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Photo/Logo_La Déclinaison Responsive.png" alt="Logo NEXOVA" width="150">
+          <p class="footer__tagline">Transforme des pages blanches en projets qui vous ressemblent. Depuis 1970, au service de vos créations les plus exigeantes.</p>
+          <nav class="footer__social" aria-label="Réseaux sociaux NEXOVA">
+            <a href="#" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="NEXOVA sur LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="NEXOVA sur Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </nav>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link">Accueil</a></li>
+            <li><a href="expertise.html" class="footer__link">Expertises</a></li>
+            <li><a href="realisations.html" class="footer__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="footer__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="footer__link">Contact &amp; Devis</a></li>
+            <li><a href="equipe.html" class="footer__link">Notre Équipe</a></li>
+            <li><a href="certifications.html" class="footer__link">Certifications</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Nos expertises">
+          <p class="footer__col-title">Expertises</p>
+          <ul class="footer__links" role="list">
+            <li><a href="expertise.html" class="footer__link">Création Print</a></li>
+            <li><a href="expertise.html" class="footer__link">Grands Formats</a></li>
+            <li><a href="expertise.html" class="footer__link">Conception graphique</a></li>
+            <li><a href="expertise.html" class="footer__link">Finition premium &amp; Vernis mat</a></li>
+            <li><a href="expertise.html" class="footer__link">Production</a></li>
+            <li><a href="expertise.html" class="footer__link">Marquage &amp; Embossage</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <address class="footer__address">
+            <strong>NEXOVA</strong><br>
+            12 Rue des Studios<br>
+            75009 Paris<br><br>
+            <a href="tel:+33142001122">01 42 00 11 22</a><br>
+            <a href="mailto:contact@nexova-agence de communication.fr">contact@nexova-agence de communication.fr</a><br><br>
+            <span>Lun–Ven : 8h00–18h00</span>
+          </address>
+          <div style="margin-top:1.25rem;">
+            <a href="https://www.fnexova.fr" class="footer__link" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.4rem;">
+              Groupe FNEXOVA
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; <span id="current-year">2026</span> NEXOVA. Tous droits réservés.</p>
+        <nav class="footer__legal" aria-label="Liens légaux">
+          <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
+          <a href="cgv.html" class="footer__legal-link">CGV</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Retour en haut de page">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+  <button class="a11y-btn" aria-label="Options d'accessibilité" aria-expanded="false" aria-controls="a11y-panel">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M15.89 8.11C15.5 7.72 14.83 7 13 7h-2c-1.83 0-2.5.72-2.89 1.11l-3.31 3.3a.996.996 0 1 0 1.41 1.41L8 11v10h2v-5h4v5h2V11l1.79 1.82a.996.996 0 1 0 1.41-1.41l-3.31-3.31z"/></svg>
+  </button>
+  <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Options d'accessibilité" aria-modal="false">
+    <p class="a11y-panel__title">Accessibilité</p>
+    <div class="a11y-option"><span>Taille du texte</span>
+      <div class="a11y-toggle">
+        <button id="font-decrease" aria-label="Réduire la taille du texte">A−</button>
+        <button id="font-reset" aria-label="Réinitialiser la taille du texte">A</button>
+        <button id="font-increase" aria-label="Augmenter la taille du texte">A+</button>
+      </div>
+    </div>
+  <script src="main.js"></script>
+  <script src="interactions.js" defer></script>
+</body>
+</html>

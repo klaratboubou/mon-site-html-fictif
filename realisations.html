@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réalisations — Portfolio agence de communication | NEXOVA</title>
+  <meta name="description"
+    content="Découvrez les réalisations d'NEXOVA : catalogues, affiches grand format, packagings, plaquettes et supports de communication support visuels avec savoir-faire depuis 1970 en Île-de-France.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="Photo/Logo_La Déclinaison Secondaire.png" type="image/png">
+  <link rel="canonical" href="https://www.nexova.fr/realisations.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.nexova.fr/realisations.html">
+  <meta property="og:title" content="Réalisations NEXOVA — Portfolio agence de communication professionnelle">
+  <meta property="og:description"
+    content="Catalogues, affiches, packagings et supports premium — découvrez nos réalisations.">
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Réalisations NEXOVA","url":"https://www.nexova.fr/realisations.html","isPartOf":{"@type":"WebSite","name":"NEXOVA","url":"https://www.nexova.fr"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .filters {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem
+    }
+
+    .filter-btn {
+      padding: .5em 1.25em;
+      border-radius: var(--radius-full);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-semi);
+      border: 1.5px solid var(--clr-border);
+      color: var(--clr-ink-soft);
+      background: transparent;
+      transition: var(--transition);
+      cursor: none;
+      letter-spacing: .02em
+    }
+
+    .filter-btn:hover {
+      border-color: var(--clr-rose);
+      color: var(--clr-rose)
+    }
+
+    .filter-btn.active {
+      background: var(--clr-rose);
+      border-color: var(--clr-rose);
+      color: white
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
+    }
+
+    .portfolio-item {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      cursor: none;
+      background: var(--clr-border-light)
+    }
+
+    .portfolio-item--large {
+      grid-column: span 2;
+      grid-row: span 1
+    }
+
+    .portfolio-item__inner {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--clr-rose-light) 0%, rgba(194, 24, 91, .05) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: .5rem;
+      color: var(--clr-rose);
+      font-size: var(--fs-xs);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: transform var(--transition-slow)
+    }
+
+    .portfolio-item--large .portfolio-item__inner {
+      aspect-ratio: 2/1
+    }
+
+    .portfolio-item__inner svg {
+      width: 32px;
+      height: 32px;
+      opacity: .5
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow)
+    }
+
+    .portfolio-item:hover .portfolio-item__inner,
+    .portfolio-item:hover img {
+      transform: scale(1.04)
+    }
+
+    .portfolio-item__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 26, 26, .88) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity var(--transition);
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem
+    }
+
+    .portfolio-item:hover .portfolio-item__overlay {
+      opacity: 1
+    }
+
+    .portfolio-item__info {
+      color: white
+    }
+
+    .portfolio-item__info h3 {
+      color: white;
+      font-size: var(--fs-base);
+      margin-bottom: .25rem
+    }
+
+    .portfolio-item__info p {
+      font-size: var(--fs-xs);
+      opacity: .75
+    }
+
+    .portfolio-item__tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: .3em .85em;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, .9);
+      font-size: .65rem;
+      font-weight: var(--fw-semi);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--clr-ink);
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity var(--transition), transform var(--transition)
+    }
+
+    .portfolio-item:hover .portfolio-item__tag {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .cta-section {
+      background: var(--clr-ink);
+      padding-block: 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(194, 24, 91, .12) 0%, transparent 70%);
+      pointer-events: none
+    }
+
+    .cta-section__inner {
+      position: relative;
+      z-index: 1
+    }
+
+    [data-category] {
+      transition: opacity .4s ease, transform .4s ease
+    }
+
+    [data-category].hidden {
+      opacity: 0;
+      transform: scale(.95);
+      pointer-events: none;
+      position: absolute
+    }
+
+    @media(max-width:1024px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .portfolio-item--large {
+        grid-column: span 1
+      }
+
+      .portfolio-item--large .portfolio-item__inner {
+        aspect-ratio: 4/3
+      }
+    }
+
+    @media(max-width:600px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* ── AVANT / APRÈS SLIDER ─────────────────────────────── */
+    .ba-portfolio {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      cursor: col-resize;
+      user-select: none;
+      touch-action: none;
+      min-height: 300px;
+    }
+    .ba-portfolio .portfolio-item__inner {
+      position: absolute;
+      inset: 0;
+      aspect-ratio: unset;
+      width: 100%;
+      height: 100%;
+    }
+    .ba-portfolio__after {
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      overflow: hidden;
+      width: 50%;
+      transition: none;
+    }
+    .ba-portfolio__after .portfolio-item__inner {
+      width: 200vw;
+      max-width: 1200px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+    .ba-portfolio--large .ba-portfolio__after .portfolio-item__inner { width: 150%; }
+    .ba-divider {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: white;
+      box-shadow: 0 0 12px rgba(0,0,0,.35);
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 42px; height: 42px;
+      background: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.25);
+      z-index: 11;
+      cursor: col-resize;
+    }
+    .ba-handle svg { width: 20px; height: 20px; color: var(--clr-ink); }
+    .ba-lbl {
+      position: absolute;
+      top: .75rem;
+      padding: .3em .85em;
+      border-radius: var(--radius-full);
+      font-size: .65rem;
+      font-weight: var(--fw-semi);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      z-index: 5;
+    }
+    .ba-lbl--b { left: .75rem;  background: rgba(26,26,26,.75); color: white; }
+    .ba-lbl--a { right: .75rem; background: rgba(194,24,91,.85);  color: white; }
+
+    /* ── FICHE RÉALISATION ENRICHIE ───────────────────────── */
+    .real-detail {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .real-detail--full { grid-template-columns: 1fr; }
+    .real-detail__visual {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--clr-border-light);
+      position: relative;
+    }
+    .real-detail__title {
+      font-family: var(--ff-title);
+      font-size: var(--fs-2xl);
+      margin-bottom: .75rem;
+    }
+    .real-detail__tags {
+      display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.25rem;
+    }
+    .real-detail__tag {
+      padding: .3em .9em;
+      border-radius: var(--radius-full);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-semi);
+      background: var(--clr-rose-light);
+      color: var(--clr-rose);
+      letter-spacing: .04em;
+    }
+    .real-detail__desc {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .real-detail__specs {
+      display: flex; flex-direction: column; gap: .6rem;
+    }
+    .real-detail__spec {
+      display: flex; gap: .75rem; font-size: var(--fs-sm);
+    }
+    .real-detail__spec strong {
+      color: var(--clr-ink);
+      min-width: 110px;
+      flex-shrink: 0;
+    }
+    .real-detail__spec span { color: var(--clr-ink-soft); }
+    .real-detail__cta { margin-top: 1.5rem; }
+    @media(max-width:900px) {
+      .real-detail { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="interactions.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <!-- Curseur personnalisé -->
+  <div class="cursor-crop-marks" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="index.html" class="nav__logo" aria-label="NEXOVA — Accueil">
+            <img src="Photo/Logo_La Déclinaison Secondaire.png" alt="NEXOVA" class="nav__logo-img">
+          </a>
+          <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="expertise.html" class="nav__link">Expertises</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="nav__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary nav__cta"><svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>Demander un devis</a>
+          <button class="nav__burger" aria-label="Ouvrir le menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <a href="index.html" class="nav__mobile-link">Accueil</a>
+      <a href="expertise.html" class="nav__mobile-link">Expertises</a>
+      <a href="realisations.html" class="nav__mobile-link active">Réalisations</a>
+      <a href="histoire.html" class="nav__mobile-link">Notre Histoire</a>
+      <a href="contact.html" class="nav__mobile-link">Contact</a>
+      <a href="contact.html" class="btn btn-primary mt-4">Demander un devis</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero-secondary section--alt">
+      <div class="container">
+        <span class="section-label hero-secondary__label" aria-hidden="true">Portfolio</span>
+        <h1 class="hero-secondary__title">Nos réalisations</h1>
+        <p class="hero-secondary__sub">Chaque projet est une page blanche transformée. Découvrez quelques-unes de nos
+          créations les plus marquantes.</p>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a><span aria-hidden="true">›</span><span aria-current="page">Réalisations</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="portfolio-title">
+      <div class="container">
+        <h2 id="portfolio-title" class="visually-hidden">Portfolio des réalisations NEXOVA</h2>
+
+        <!-- Filtres -->
+        <div class="filters reveal" role="group" aria-label="Filtrer par catégorie">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="print">Print</button>
+          <button class="filter-btn" data-filter="grand-format">Grand Format</button>
+          <button class="filter-btn" data-filter="faconnage">Production</button>
+          <button class="filter-btn" data-filter="finitions">Finitions spéciales</button>
+        </div>
+
+        <!-- Grille portfolio -->
+        <div class="portfolio-grid" id="portfolio-grid">
+
+          <!-- Avant/Après — Catalogue -->
+          <article class="portfolio-item portfolio-item--large ba-portfolio ba-portfolio--large reveal" data-category="print"
+            aria-label="Avant/Après — Catalogue institutionnel 48 pages">
+            <!-- AVANT -->
+            <div class="portfolio-item__inner" style="background:linear-gradient(135deg,#dedad4,#c8c3bb);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="color:#999;font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;">Fichier source</span>
+            </div>
+            <!-- APRÈS -->
+            <div class="ba-portfolio__after">
+              <div class="portfolio-item__inner">
+                <!-- Remplacez par : <img src="Photo/apres-catalogue.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(194,24,91,.6)" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span style="font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;">Support visuel NEXOVA</span>
+              </div>
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-handle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/><polyline points="15 18 9 12 15 6" style="transform:none"/></svg>
+            </div>
+            <span class="ba-lbl ba-lbl--b">Avant</span>
+            <span class="ba-lbl ba-lbl--a">Après</span>
+            <div class="portfolio-item__overlay" aria-hidden="true">
+              <div class="portfolio-item__info">
+                <h3>Catalogue institutionnel 48 pages</h3>
+                <p>Print 4 couleurs · Finition premium mat · Dos carré collé · 300 ex.</p>
+              </div>
+            </div>
+            <span class="portfolio-item__tag" aria-hidden="true">Print</span>
+          </article>
+
+          <article class="portfolio-item reveal reveal-delay-1" data-category="finitions"
+            aria-label="Plaquette premium — Finitions spéciales">
+            <div class="portfolio-item__inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo à venir</span>
+            </div>
+            <div class="portfolio-item__overlay" aria-hidden="true">
+              <div class="portfolio-item__info">
+                <h3>Plaquette commerciale premium</h3>
+                <p>Print · Vernis mat sélectif · Marquage à chaud</p>
+              </div>
+            </div>
+            <span class="portfolio-item__tag" aria-hidden="true">Finitions spéciales</span>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="grand-format" aria-label="Affiche grand format">
+            <div class="portfolio-item__inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo à venir</span>
+            </div>
+            <div class="portfolio-item__overlay" aria-hidden="true">
+              <div class="portfolio-item__info">
+                <h3>Affiche événementielle B1</h3>
+                <p>Grands Formats · Papier couché 170g</p>
+              </div>
+            </div>
+            <span class="portfolio-item__tag" aria-hidden="true">Grand Format</span>
+          </article>
+
+          <article class="portfolio-item reveal reveal-delay-1" data-category="faconnage"
+            aria-label="Boîte packaging production">
+            <div class="portfolio-item__inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo à venir</span>
+            </div>
+            <div class="portfolio-item__overlay" aria-hidden="true">
+              <div class="portfolio-item__info">
+                <h3>Packaging découpe spéciale</h3>
+                <p>Print · Finition premium brillant · Découpe laser</p>
+              </div>
+            </div>
+            <span class="portfolio-item__tag" aria-hidden="true">Production</span>
+          </article>
+
+          <article class="portfolio-item reveal reveal-delay-2" data-category="print"
+            aria-label="Livre édition print">
+            <div class="portfolio-item__inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo à venir</span>
+            </div>
+            <div class="portfolio-item__overlay" aria-hidden="true">
+              <div class="portfolio-item__info">
+                <h3>Livre d'entreprise 120 pages</h3>
+                <p>Print quadri · Couverture rigide · Finition premium velours</p>
+              </div>
+            </div>
+            <span class="portfolio-item__tag" aria-hidden="true">Print</span>
+          </article>
+
+          <article class="portfolio-item portfolio-item--large reveal" data-category="grand-format"
+            aria-label="PLV grand format">
+            <div class="portfolio-item__inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo à venir</span>
+            </div>
+            <div class="portfolio-item__overlay" aria-hidden="true">
+              <div class="portfolio-item__info">
+                <h3>PLV point de vente</h3>
+                <p>Grand Format · Découpe spéciale · Production</p>
+              </div>
+            </div>
+            <span class="portfolio-item__tag" aria-hidden="true">Grand Format</span>
+          </article>
+
+          <article class="portfolio-item reveal" data-category="finitions" aria-label="Carte de visite marquage">
+            <div class="portfolio-item__inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo à venir</span>
+            </div>
+            <div class="portfolio-item__overlay" aria-hidden="true">
+              <div class="portfolio-item__info">
+                <h3>Cartes de visite prestige</h3>
+                <p>Print · Marquage à chaud · Embossage · 350g</p>
+              </div>
+            </div>
+            <span class="portfolio-item__tag" aria-hidden="true">Finitions spéciales</span>
+          </article>
+
+          <article class="portfolio-item reveal reveal-delay-1" data-category="faconnage"
+            aria-label="Dépliant production">
+            <div class="portfolio-item__inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo à venir</span>
+            </div>
+            <div class="portfolio-item__overlay" aria-hidden="true">
+              <div class="portfolio-item__info">
+                <h3>Dépliant 6 volets accordéon</h3>
+                <p>Print · Pliage accordéon · Vernis mat total</p>
+              </div>
+            </div>
+            <span class="portfolio-item__tag" aria-hidden="true">Production</span>
+          </article>
+
+          <article class="portfolio-item reveal reveal-delay-2" data-category="print" aria-label="Magazine print">
+            <div class="portfolio-item__inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo à venir</span>
+            </div>
+            <div class="portfolio-item__overlay" aria-hidden="true">
+              <div class="portfolio-item__info">
+                <h3>Magazine interne 64 pages</h3>
+                <p>Print · Agrafé centre · Couverture pelliculée</p>
+              </div>
+            </div>
+            <span class="portfolio-item__tag" aria-hidden="true">Print</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── FICHES RÉALISATIONS DÉTAILLÉES ───────────────────── -->
+    <section class="section section--alt" aria-labelledby="detail-title">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:3rem;">
+          <span class="section-label reveal" aria-hidden="true">Zoom sur nos projets</span>
+          <h2 class="section-title reveal" id="detail-title">Des projets, des histoires</h2>
+          <p class="section-intro reveal" style="margin-inline:auto;">
+            Chaque réalisation cache une collaboration. Voici quelques projets racontés en détail — pour vous donner une idée de ce qu'on peut accomplir ensemble.
+          </p>
+        </div>
+
+        <!-- Fiche 1 — Catalogue luxe -->
+        <div class="real-detail reveal">
+          <div class="real-detail__visual">
+            <!-- Remplacez par votre vraie photo : <img src="Photo/fiche-catalogue-luxe.jpg" alt="Catalogue luxe support visuel par NEXOVA"> -->
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--clr-rose-light),rgba(194,24,91,.05));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;color:var(--clr-rose);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:36px;height:36px;opacity:.4;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;opacity:.6;">Photo du projet</span>
+            </div>
+          </div>
+          <div>
+            <div class="real-detail__tags">
+              <span class="real-detail__tag">Print</span>
+              <span class="real-detail__tag">Finitions premium</span>
+              <span class="real-detail__tag">Finition premium</span>
+            </div>
+            <h3 class="real-detail__title">Catalogue produits luxe — 64 pages</h3>
+            <p class="real-detail__desc">
+              Un fabricant de mobilier haut de gamme nous confie chaque année son catalogue annuel. Enjeu : traduire sur le papier la qualité de ses matières et la précision de ses finitions. Résultat : une création print 4 couleurs sur papier premium 150g, avec couverture en 350g pelliculé velours et vernis mat sélectif sur les visuels produits. Un catalogue que les clients gardent.
+            </p>
+            <div class="real-detail__specs">
+              <div class="real-detail__spec"><strong>Projet</strong> <span>500 exemplaires</span></div>
+              <div class="real-detail__spec"><strong>Format</strong> <span>21×28 cm (A4+)</span></div>
+              <div class="real-detail__spec"><strong>Papier intérieur</strong> <span>Papier mat 150g</span></div>
+              <div class="real-detail__spec"><strong>Couverture</strong> <span>350g pelliculé velours + vernis mat sélectif</span></div>
+              <div class="real-detail__spec"><strong>Production</strong> <span>Dos carré collé PUR</span></div>
+              <div class="real-detail__spec"><strong>Délai</strong> <span>7 jours ouvrés</span></div>
+            </div>
+            <div class="real-detail__cta">
+              <a href="contact.html" class="btn btn-primary">
+                Un projet similaire ? On en parle.
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fiche 2 — PLV / Affichage événementiel -->
+        <div class="real-detail reveal" style="margin-top:2rem;">
+          <div>
+            <div class="real-detail__tags">
+              <span class="real-detail__tag">Grands Formats</span>
+              <span class="real-detail__tag">Événementiel</span>
+            </div>
+            <h3 class="real-detail__title">Campagne d'affichage événementiel — 200 affiches</h3>
+            <p class="real-detail__desc">
+              Pour un festival régional, nous avons produit en 5 jours une série complète d'affiches dans 3 formats (40×60, 60×80 et 80×120 cm). Le défi : une cohérence chromatique parfaite sur tous les formats malgré les différentes tailles de projet. Grâce à notre certification ISO 9001, les couleurs étaient identiques d'un format à l'autre — sur 3 passages équipement différents.
+            </p>
+            <div class="real-detail__specs">
+              <div class="real-detail__spec"><strong>Formats</strong> <span>40×60 / 60×80 / 80×120 cm</span></div>
+              <div class="real-detail__spec"><strong>Projet</strong> <span>200 pièces au total</span></div>
+              <div class="real-detail__spec"><strong>Papier</strong> <span>Papier premium 170g</span></div>
+              <div class="real-detail__spec"><strong>Finition</strong> <span>Vernis aqueux protection UV</span></div>
+              <div class="real-detail__spec"><strong>Délai</strong> <span>5 jours ouvrés</span></div>
+            </div>
+            <div class="real-detail__cta">
+              <a href="contact.html" class="btn btn-primary">
+                Demander un devis grand format
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="real-detail__visual">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--clr-rose-light),rgba(194,24,91,.05));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;color:var(--clr-rose);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:36px;height:36px;opacity:.4;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;opacity:.6;">Photo du projet</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fiche 3 — Packaging -->
+        <div class="real-detail reveal" style="margin-top:2rem;">
+          <div class="real-detail__visual">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--clr-rose-light),rgba(194,24,91,.05));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;color:var(--clr-rose);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:36px;height:36px;opacity:.4;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;opacity:.6;">Photo du projet</span>
+            </div>
+          </div>
+          <div>
+            <div class="real-detail__tags">
+              <span class="real-detail__tag">Production</span>
+              <span class="real-detail__tag">Découpe laser</span>
+              <span class="real-detail__tag">Finition premium brillant</span>
+            </div>
+            <h3 class="real-detail__title">Étuis packaging découpe spéciale — 1 000 pièces</h3>
+            <p class="real-detail__desc">
+              Un artisan confiseur local souhaitait un packaging à l'image de ses produits : unique, soigné, mémorable. Nous avons conçu avec lui un étui à découpe laser sur mesure, support visuel print 4 couleurs sur carton 350g, finition premium brillant côté extérieur et vernis mat sélectif sur le logotype. Le résultat : un packaging que les clients photographient avant même de l'ouvrir.
+            </p>
+            <div class="real-detail__specs">
+              <div class="real-detail__spec"><strong>Projet</strong> <span>1 000 étuis</span></div>
+              <div class="real-detail__spec"><strong>Support</strong> <span>Carton micro-cannelé 350g</span></div>
+              <div class="real-detail__spec"><strong>Finition ext.</strong> <span>Finition premium brillant + vernis mat sélectif</span></div>
+              <div class="real-detail__spec"><strong>Production</strong> <span>Découpe laser + rainage + montage</span></div>
+              <div class="real-detail__spec"><strong>Délai</strong> <span>10 jours ouvrés</span></div>
+            </div>
+            <div class="real-detail__cta">
+              <a href="contact.html" class="btn btn-primary">
+                Parler de mon projet packaging
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="cta-real-title">
+      <div class="container" style="text-align:center;">
+        <span class="section-label reveal" aria-hidden="true" style="justify-content:center;">Votre projet</span>
+        <h2 class="section-title reveal" id="cta-real-title">Un projet similaire<br>en tête ?</h2>
+        <p class="section-intro reveal" style="margin-inline:auto;margin-bottom:2rem;">Ces réalisations ne sont qu'un
+          aperçu de ce que nous pouvons accomplir ensemble. Chaque projet est unique — parlons du vôtre.</p>
+        <div class="reveal reveal-delay-1" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary">Lancer mon projet</a>
+          <a href="expertise.html" class="btn btn-outline">Voir nos expertises</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__grid">
+
+        <!-- Colonne marque -->
+        <div>
+          <img src="Photo/Logo_La Déclinaison Responsive.png" alt="Logo nexova" width="150">
+          <p class="footer__tagline">Transforme des pages blanches en projets qui vous ressemblent. Depuis 1970, au
+            service de vos créations les plus exigeantes.</p>
+          <nav class="footer__social" aria-label="Réseaux sociaux NEXOVA">
+            <a href="#" class="footer__social-link" target="_blank"
+              rel="noopener noreferrer" aria-label="NEXOVA sur LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="NEXOVA sur Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Navigation -->
+        <nav aria-label="Navigation pied de page">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link">Accueil</a></li>
+            <li><a href="expertise.html" class="footer__link">Expertises</a></li>
+            <li><a href="realisations.html" class="footer__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="footer__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="footer__link">Contact & Devis</a></li>
+          </ul>
+        </nav>
+
+        <!-- Expertises -->
+        <nav aria-label="Nos expertises">
+          <p class="footer__col-title">Expertises</p>
+          <ul class="footer__links" role="list">
+            <li><a href="expertise.html" class="footer__link">Création Print</a></li>
+            <li><a href="expertise.html" class="footer__link">Grands Formats</a></li>
+            <li><a href="expertise.html" class="footer__link">Conception graphique</a></li>
+            <li><a href="expertise.html" class="footer__link">Finition premium & Vernis mat</a></li>
+            <li><a href="expertise.html" class="footer__link">Production</a></li>
+            <li><a href="expertise.html" class="footer__link">Marquage & Embossage</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact -->
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <address class="footer__address">
+            <strong>NEXOVA</strong>
+            12 Rue des Studios<br>
+            75009 Paris<br><br>
+            <a href="tel:+33142001122">01 42 00 11 22</a><br>
+            <a href="mailto:contact@nexova-agence de communication.fr">contact@nexova-agence de communication.fr</a><br><br>
+            <span>Lun–Ven : 8h00–18h00</span>
+          </address>
+          <div style="margin-top:1.25rem;">
+            <a href="https://www.fnexova.fr" class="footer__link" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:.4rem;">
+              Groupe FNEXOVA
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" style="width:12px;height:12px;" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bas de footer -->
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          &copy; <span id="current-year">2026</span> NEXOVA. Tous droits réservés.
+        </p>
+        <nav class="footer__legal" aria-label="Liens légaux">
+          <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
+          <a href="cgv.html" class="footer__legal-link">CGV</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Retour en haut"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </svg></button>
+  <button class="a11y-btn" aria-label="Options d'accessibilité" aria-expanded="false" aria-controls="a11y-panel"><svg
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      aria-hidden="true">
+      <circle cx="12" cy="4" r="2" />
+      <path
+        d="M15.89 8.11C15.5 7.72 14.83 7 13 7h-2c-1.83 0-2.5.72-2.89 1.11l-3.31 3.3a.996.996 0 1 0 1.41 1.41L8 11v10h2v-5h4v5h2V11l1.79 1.82a.996.996 0 1 0 1.41-1.41l-3.31-3.31z" />
+    </svg></button>
+  <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Options d'accessibilité">
+    <p class="a11y-panel__title">Accessibilité</p>
+    <div class="a11y-option"><span>Taille du texte</span>
+      <div class="a11y-toggle"><button id="font-decrease" aria-label="Réduire">A−</button><button id="font-reset"
+          aria-label="Réinitialiser">A</button><button id="font-increase" aria-label="Augmenter">A+</button></div>
+    </div>
+    <div class="a11y-option"><span>Contraste élevé</span>
+      <div class="a11y-toggle"><button id="high-contrast" style="width:auto;padding:0 .75rem;">Activer</button></div>
+    </div>
+  </div>
+
+  
+  <script src="main.js"></script>
+
+  <script>
+  document.querySelectorAll('.ba-portfolio').forEach(slider => {
+    const after   = slider.querySelector('.ba-portfolio__after');
+    const divider = slider.querySelector('.ba-divider');
+    const handle  = slider.querySelector('.ba-handle');
+    if (!after || !divider || !handle) return;
+    let dragging = false;
+    function setPos(x) {
+      const rect = slider.getBoundingClientRect();
+      let pct = (x - rect.left) / rect.width * 100;
+      pct = Math.max(4, Math.min(96, pct));
+      after.style.width  = pct + '%';
+      divider.style.left = pct + '%';
+      handle.style.left  = pct + '%';
+    }
+    handle.addEventListener('mousedown', e => { dragging = true; e.preventDefault(); });
+    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup',   ()  => { dragging = false; });
+    handle.addEventListener('touchstart', e => { dragging = true; e.preventDefault(); }, { passive: false });
+    window.addEventListener('touchmove',  e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend',   ()  => { dragging = false; });
+  });
+  </script>

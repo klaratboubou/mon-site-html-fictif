@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expertises — Création Print, Grand Format, Production | NEXOVA</title>
+  <meta name="description"
+    content="Découvrez les expertises d'NEXOVA : création print, grand format A0, conception graphique, finition premium, vernis mat, production. Et via partenaires : marquage à chaud, embossage, numérique courte série.">
+  <meta name="keywords"
+    content="agence de communication print, grand format, conception graphique, finition premium, vernis mat, production, typographie, marquage à chaud, embossage, NEXOVA, Paris, Paris, Île-de-France">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.nexova.fr/expertise.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.nexova.fr/expertise.html">
+  <meta property="og:title" content="Expertises NEXOVA — Print, Grand Format, Finitions premium">
+  <meta property="og:description" content="Maîtrise complète de la chaîne graphique depuis 1970.">
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Expertises NEXOVA","url":"https://www.nexova.fr/expertise.html","isPartOf":{"@type":"WebSite","name":"NEXOVA","url":"https://www.nexova.fr"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .expertise-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding-bottom: 4rem;
+      margin-bottom: 4rem
+    }
+
+    .expertise-intro__frame {
+      aspect-ratio: 1/1;
+      background: linear-gradient(135deg, var(--clr-rose-light), rgba(194, 24, 91, .04));
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(194, 24, 91, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: .5rem;
+      color: var(--clr-rose);
+      font-size: var(--fs-xs);
+      letter-spacing: .06em;
+      text-transform: uppercase
+    }
+
+    .expertise-intro__frame svg {
+      width: 40px;
+      height: 40px;
+      opacity: .4
+    }
+
+    .expertise-intro__stamp {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      background: var(--clr-rose);
+      color: white;
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-rose)
+    }
+
+    .expertise-intro__stamp .big {
+      font-family: var(--ff-title);
+      font-size: var(--fs-2xl);
+      line-height: 1
+    }
+
+    .expertise-intro__stamp .small {
+      font-size: var(--fs-xs);
+      opacity: .85;
+      margin-top: .2rem
+    }
+
+    .expertise-intro__visual {
+      position: relative
+    }
+
+    .block-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem
+    }
+
+    .block-header__line {
+      flex: 1;
+      height: 1px;
+      background: var(--clr-border)
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem
+    }
+
+    .detail-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+      transition: transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden
+    }
+
+    .detail-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--clr-rose);
+      transition: width var(--transition-slow)
+    }
+
+    .detail-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md)
+    }
+
+    .detail-card:hover::after {
+      width: 100%
+    }
+
+    .detail-card__ico {
+      width: 60px;
+      height: 60px;
+      background: var(--clr-rose-light);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-rose);
+      flex-shrink: 0
+    }
+
+    .detail-card__ico svg {
+      width: 28px;
+      height: 28px
+    }
+
+    .detail-card__body h3 {
+      font-size: var(--fs-lg);
+      margin-bottom: .5rem
+    }
+
+    .detail-card__body p {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.75;
+      margin-bottom: 1rem
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: .25em .75em;
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-full);
+      font-size: .7rem;
+      font-weight: var(--fw-semi);
+      color: var(--clr-ink-muted);
+      letter-spacing: .04em
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem
+    }
+
+    .partner-card {
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition)
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      background: var(--clr-white)
+    }
+
+    .partner-card__ico {
+      width: 64px;
+      height: 64px;
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-ink-muted);
+      margin: 0 auto 1.25rem
+    }
+
+    .partner-card__ico svg {
+      width: 28px;
+      height: 28px
+    }
+
+    .partner-card h3 {
+      font-size: var(--fs-md);
+      margin-bottom: .5rem
+    }
+
+    .partner-card p {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.7
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      position: relative;
+      margin-top: 3rem
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, var(--clr-border), var(--clr-rose), var(--clr-border));
+      z-index: 0
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1
+    }
+
+    .process-step__num {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--clr-white);
+      border: 2px solid var(--clr-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-family: var(--ff-title);
+      font-size: var(--fs-lg);
+      color: var(--clr-rose);
+      transition: background var(--transition), border-color var(--transition), box-shadow var(--transition)
+    }
+
+    .process-step:hover .process-step__num {
+      background: var(--clr-rose);
+      color: white;
+      border-color: var(--clr-rose);
+      box-shadow: var(--shadow-rose)
+    }
+
+    .process-step h4 {
+      font-size: var(--fs-sm);
+      margin-bottom: .35rem
+    }
+
+    .process-step p {
+      font-size: var(--fs-xs);
+      color: var(--clr-ink-muted);
+      line-height: 1.6
+    }
+
+    .cta-section {
+      background: var(--clr-ink);
+      padding-block: 6rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(194, 24, 91, .12) 0%, transparent 70%);
+      pointer-events: none
+    }
+
+    .cta-section__inner {
+      position: relative;
+      z-index: 1
+    }
+
+    @media(max-width:1024px) {
+      .expertise-intro {
+        grid-template-columns: 1fr;
+        gap: 2.5rem
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr
+      }
+
+      .partner-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .process-steps::before {
+        display: none
+      }
+    }
+
+    @media(max-width:600px) {
+      .partner-grid {
+        grid-template-columns: 1fr
+      }
+
+      .detail-card {
+        grid-template-columns: 1fr;
+        gap: 1rem
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="interactions.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <!-- Curseur personnalisé -->
+  <div class="cursor-crop-marks" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="index.html" class="nav__logo" aria-label="NEXOVA — Accueil">
+            <img src="Photo/Logo_La Déclinaison Secondaire.png" alt="NEXOVA" class="nav__logo-img">
+          </a>
+          <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="expertise.html" class="nav__link active" aria-current="page">Expertises</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="nav__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary nav__cta"><svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>Demander un devis</a>
+          <button class="nav__burger" aria-label="Ouvrir le menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <a href="index.html" class="nav__mobile-link">Accueil</a>
+      <a href="expertise.html" class="nav__mobile-link active">Expertises</a>
+      <a href="realisations.html" class="nav__mobile-link">Réalisations</a>
+      <a href="histoire.html" class="nav__mobile-link">Notre Histoire</a>
+      <a href="contact.html" class="nav__mobile-link">Contact</a>
+      <a href="contact.html" class="btn btn-primary mt-4">Demander un devis</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero-secondary section--alt">
+      <div class="container">
+        <span class="section-label hero-secondary__label" aria-hidden="true">Savoir-faire</span>
+        <h1 class="hero-secondary__title">Nos expertises<br>en agence de communication</h1>
+        <p class="hero-secondary__sub">De la conception au production, NEXOVA maîtrise l'ensemble de la chaîne graphique
+          pour des créations d'exception.</p>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a><span aria-hidden="true">›</span><span aria-current="page">Expertises</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="expertise-intro">
+          <div class="expertise-intro__visual reveal-left">
+            <div class="expertise-intro__frame">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>Photo studio NEXOVA</span>
+            </div>
+            <div class="expertise-intro__stamp" aria-hidden="true">
+              <p class="big">60+</p>
+              <p class="small">ans de savoir-faire</p>
+            </div>
+          </div>
+          <div class="reveal-right">
+            <span class="section-label" aria-hidden="true">Notre philosophie</span>
+            <h2 class="section-title">La maîtrise complète<br>de la chaîne graphique</h2>
+            <p class="section-intro" style="margin-bottom:1.5rem;">Chez NEXOVA, chaque projet d'création est piloté de
+              A à Z dans nos studios franciliens. Du fichier source à l'support visuel finalisé, nous contrôlons chaque étape
+              pour vous garantir un résultat conforme à vos exigences les plus précises.</p>
+            <p style="font-size:var(--fs-sm);color:var(--clr-ink-soft);line-height:1.8;margin-bottom:2rem;">Grâce à
+              notre appartenance au Groupe FNEXOVA et à notre réseau de partenaires spécialisés, nous pouvons également
+              proposer de nombreuses techniques de finition avancées.</p>
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NOS MACHINES D'IMPRESSION ────────────────────────── -->
+    <section class="section" aria-labelledby="machines-title">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:3rem;">
+          <span class="section-label reveal" aria-hidden="true" style="justify-content:center;">Notre parc machines</span>
+          <h2 class="section-title reveal" id="machines-title">Des équipements à la hauteur<br>de vos ambitions</h2>
+          <p class="section-intro reveal" style="margin-inline:auto;">
+            Chez nous, les machines ne sont pas un argument de vente — elles sont le cœur de notre studio. Voici les équipements sur lesquels vos projets prennent vie chaque jour.
+          </p>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-card reveal">
+            <div class="detail-card__ico" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="detail-card__body">
+              <h3>Équipements print grand format</h3>
+              <p>Nos équipements print permettent d'atteindre le format A0 cm avec une précision et une régularité de couleur que seul l'print industriel peut garantir. Idéal pour les projets moyens et grands volumes.</p>
+              <div class="tags"><span class="tag">Format A0 cm</span><span class="tag">RVB + charte graphique</span><span class="tag">Quadri</span><span class="tag">Grands projets</span></div>
+            </div>
+          </article>
+          <article class="detail-card reveal reveal-delay-1">
+            <div class="detail-card__ico" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <div class="detail-card__body">
+              <h3>Studio conception graphique intégré</h3>
+              <p>De la réception du fichier au flashage des fichiers, tout se passe chez nous. Nos techniciens conception graphique vérifient chaque document et vous alertent avant que la équipement ne tourne — pas après.</p>
+              <div class="tags"><span class="tag">Gravure de fichiers</span><span class="tag">Calibration couleurs</span><span class="tag">Contrôle fichiers</span><span class="tag">validation client</span></div>
+            </div>
+          </article>
+          <article class="detail-card reveal reveal-delay-2">
+            <div class="detail-card__ico" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="detail-card__body">
+              <h3>Machines de finition premium & vernis</h3>
+              <p>Finition premium mat, brillant ou velours, vernis mat total ou sélectif — nos équipements de finition subliment chaque création et lui donnent ce toucher premium qui fait la différence.</p>
+              <div class="tags"><span class="tag">Finition premium mat/brillant</span><span class="tag">Soft-touch</span><span class="tag">Vernis mat total</span><span class="tag">Vernis sélectif</span></div>
+            </div>
+          </article>
+          <article class="detail-card reveal reveal-delay-3">
+            <div class="detail-card__ico" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div class="detail-card__body">
+              <h3>Studio de production</h3>
+              <p>Découpe, rainage, pliage, reliure, perforation, spirale… Notre studio de production est équipé pour transformer vos feuilles support visueles en supports finis, prêts à être distribués ou expédiés.</p>
+              <div class="tags"><span class="tag">Découpe</span><span class="tag">Rainage / Pliage</span><span class="tag">Reliure</span><span class="tag">Perforation</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="propres-title">
+      <div class="container">
+        <div class="block-header reveal">
+          <div style="display:flex;align-items:center;gap:.75rem;white-space:nowrap;"><span
+              class="badge badge--green">En propre</span>
+            <h2 id="propres-title" style="font-size:var(--fs-2xl);">Nos expertises internes</h2>
+          </div>
+          <div class="block-header__line"></div>
+        </div>
+        <p class="section-intro reveal" style="margin-bottom:2.5rem;">Ces prestations sont réalisées directement dans
+          nos studios de Paris par nos équipes qualifiées.</p>
+        <div class="detail-grid">
+
+          <article class="detail-card reveal">
+            <div class="detail-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg></div>
+            <div class="detail-card__body">
+              <h3>Conception graphique</h3>
+              <p>Notre studio conception graphique intégré assure la réception et vérification technique de vos fichiers,
+                correction des défauts, gestion chromatique RVB, maquettage et flashage des fichiers. Zéro mauvaise
+                surprise à la livraison.</p>
+              <div class="tags"><span class="tag">Vérification fichiers</span><span class="tag">Calibration
+                  couleurs</span><span class="tag">Maquettage</span><span class="tag">Flashage fichiers</span><span
+                  class="tag">validation client</span></div>
+            </div>
+          </article>
+
+          <article class="detail-card reveal">
+            <div class="detail-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg></div>
+            <div class="detail-card__body">
+              <h3>Création Print</h3>
+              <p>L'print est la technologie d'création de référence pour les moyens et grands projets. Fidélité des
+                couleurs, netteté des textes, régularité du rendu — pour vos catalogues, plaquettes et supports
+                marketing avec une qualité constante.</p>
+              <div class="tags"><span class="tag">Catalogues</span><span class="tag">Plaquettes</span><span
+                  class="tag">Livres</span><span class="tag">Flyers</span><span class="tag">Affiches</span><span
+                  class="tag">Dépliants</span></div>
+            </div>
+          </article>
+
+          <article class="detail-card reveal reveal-delay-1">
+            <div class="detail-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 3 21 3 21 9" />
+                <polyline points="9 21 3 21 3 15" />
+                <line x1="21" y1="3" x2="14" y2="10" />
+                <line x1="3" y1="21" x2="10" y2="14" />
+              </svg></div>
+            <div class="detail-card__body">
+              <h3>Grands Formats</h3>
+              <p>Nos équipements grand format permettent d'concevoir jusqu'au format A0 cm en print industriel.
+                Souplesse unique pour supports de grande dimension, maquettages optimisées et coûts réduits sur les
+                longues séries.</p>
+              <div class="tags"><span class="tag">Affiches B0/B1</span><span class="tag">Packaging</span><span
+                  class="tag">PLV</span><span class="tag">Grandes séries</span></div>
+            </div>
+          </article>
+
+          <article class="detail-card reveal">
+            <div class="detail-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <div class="detail-card__body">
+              <h3>Finition premium</h3>
+              <p>Film plastique transparent appliqué pour protéger et sublimer votre support visuel. Finition premium mat pour un
+                rendu sophistiqué, brillant pour des couleurs saturées, ou velours pour une sensation veloutée très
+                premium.</p>
+              <div class="tags"><span class="tag">Finition premium mat</span><span class="tag">Finition premium
+                  brillant</span><span class="tag">Soft-touch</span><span class="tag">Anti-UV</span></div>
+            </div>
+          </article>
+
+          <article class="detail-card reveal reveal-delay-1">
+            <div class="detail-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+              </svg></div>
+            <div class="detail-card__body">
+              <h3>Vernis mat</h3>
+              <p>Brillance et protection sans film plastique. En total pour un aspect homogène, ou en sélectif pour
+                mettre en relief certains éléments graphiques — créant un contraste mat/brillant très élégant pour vos
+                supports haut de gamme.</p>
+              <div class="tags"><span class="tag">Vernis total</span><span class="tag">Vernis sélectif</span><span
+                  class="tag">Contraste mat/brillant</span></div>
+            </div>
+          </article>
+
+          <article class="detail-card reveal reveal-delay-1">
+            <div class="detail-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 7 4 4 20 4 20 7" />
+                <line x1="9" y1="20" x2="15" y2="20" />
+                <line x1="12" y1="4" x2="12" y2="20" />
+              </svg></div>
+            <div class="detail-card__body">
+              <h3>Typographie</h3>
+              <p>NEXOVA dispose d'un savoir-faire historique dans le travail typographique. Nous veillons à la
+                lisibilité, la hiérarchie visuelle et la cohérence graphique pour que vos textes parlent autant que vos
+                visuels.</p>
+              <div class="tags"><span class="tag">Composition</span><span class="tag">Mise en page</span><span
+                  class="tag">Livres & édition</span><span class="tag">Identité visuelle</span></div>
+            </div>
+          </article>
+
+          <article class="detail-card reveal" style="grid-column:1/-1">
+            <div class="detail-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg></div>
+            <div class="detail-card__body">
+              <h3>Production</h3>
+              <p>Toutes les opérations de transformation après création : découpe au format, pliage, rainage, reliure
+                (agrafage, dos carré collé, spirale), perforation, encartage, conditionnement. Notre studio intégré
+                vous livre des supports entièrement finalisés, prêts à l'emploi, sans intermédiaire.</p>
+              <div class="tags"><span class="tag">Découpe</span><span class="tag">Pliage</span><span
+                  class="tag">Rainage</span><span class="tag">Agrafage</span><span class="tag">Dos carré
+                  collé</span><span class="tag">Spirale</span><span class="tag">Perforation</span><span
+                  class="tag">Encartage</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="partenaires-title">
+      <div class="container">
+        <div class="block-header reveal">
+          <div style="display:flex;align-items:center;gap:.75rem;white-space:nowrap;"><span class="badge badge--ink">Via
+              partenaires</span>
+            <h2 id="partenaires-title" style="font-size:var(--fs-2xl);">Prestations partenaires</h2>
+          </div>
+          <div class="block-header__line"></div>
+        </div>
+        <p class="section-intro reveal" style="margin-bottom:2.5rem;">Via notre réseau de partenaires spécialisés, NEXOVA
+          vous propose des techniques de finition avancées pour des créations véritablement uniques.</p>
+        <div class="partner-grid">
+          <article class="partner-card reveal">
+            <div class="partner-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg></div>
+            <h3>Marquage à chaud</h3>
+            <p>Application d'une feuille métallique (or, argent, couleurs) par pression et chaleur. Effet luxe
+              incomparable pour cartes de visite, couvertures et packaging premium.</p>
+          </article>
+          <article class="partner-card reveal reveal-delay-1">
+            <div class="partner-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              </svg></div>
+            <h3>Embossage</h3>
+            <p>Création d'un relief en creux ou en bosse sur le papier via une matrice métallique. Dimension tactile et
+              élégante qui renforce le caractère premium de vos supports.</p>
+          </article>
+          <article class="partner-card reveal reveal-delay-2">
+            <div class="partner-card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg></div>
+            <h3>Numérique courte série</h3>
+            <p>Pour les projets de 1 à quelques centaines d'exemplaires. Excellent rapport qualité/prix avec
+              personnalisation possible d'un exemplaire à l'autre (données variables).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="process-title">
+      <div class="container text-center">
+        <span class="section-label reveal" aria-hidden="true" style="justify-content:center;">Comment ça marche</span>
+        <h2 class="section-title reveal" id="process-title">Notre processus de production</h2>
+        <p class="section-intro reveal" style="margin-inline:auto;">De la réception de votre fichier à la livraison,
+          voici les 5 étapes que suit chacun de vos projets — sans exception.</p>
+        <div class="process-steps">
+          <div class="process-step reveal">
+            <div class="process-step__num" aria-hidden="true">01</div>
+            <h4>Devis & conseil</h4>
+            <p>On prend le temps de comprendre votre projet avant de chiffrer quoi que ce soit. Support, quantité, délai, finitions — vous recevez un devis personnalisé sous 24h, avec nos recommandations.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-1">
+            <div class="process-step__num" aria-hidden="true">02</div>
+            <h4>Conception graphique</h4>
+            <p>Votre fichier passe entre les mains de notre studio conception graphique intégré. On vérifie les fonds perdus, la résolution, les profils couleur, l'maquettage — et on vous alerte si quelque chose cloche avant que les fichiers ne soient gravées.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <div class="process-step__num" aria-hidden="true">03</div>
+            <h4>Création</h4>
+            <p>Vos fichiers montent sur nos équipements print grand format, jusqu'au A0. Chaque projet est suivi par un conducteur de équipement expérimenté qui ajuste densités et repérages tout au long de la production.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <div class="process-step__num" aria-hidden="true">04</div>
+            <h4>Finitions</h4>
+            <p>Finition premium mat, brillant ou velours, vernis mat sélectif, découpe, rainage, reliure… Notre studio de production transforme vos feuilles support visueles en supports aboutis, prêts à l'emploi.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-4">
+            <div class="process-step__num" aria-hidden="true">05</div>
+            <h4>Livraison</h4>
+            <p>Vos support visuels sont conditionnés avec soin — filmés, palettisés ou mis en cartons selon vos besoins — et expédiés dans les délais convenus. On peut aussi organiser une livraison directe sur vos points de vente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="container cta-section__inner">
+        <h2 class="reveal" id="cta-title" style="color:white;">Un projet d'création en tête ?</h2>
+        <p class="reveal reveal-delay-1"
+          style="color:rgba(255,255,255,.7);font-size:var(--fs-md);margin-bottom:2.5rem;max-width:48ch;margin-inline:auto;">
+          Décrivez-nous votre projet et recevez un devis personnalisé sous 24h.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-2">
+          <a href="contact.html" class="btn btn-primary">Demander un devis gratuit</a>
+          <a href="tel:+33142001122" class="btn btn-outline-white">01 42 00 11 22</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__grid">
+
+        <!-- Colonne marque -->
+        <div>
+          <img src="Photo/Logo_La Déclinaison Responsive.png" alt="Logo nexova" width="150">
+          <p class="footer__tagline">Transforme des pages blanches en projets qui vous ressemblent. Depuis 1970, au
+            service de vos créations les plus exigeantes.</p>
+          <nav class="footer__social" aria-label="Réseaux sociaux NEXOVA">
+            <a href="#" class="footer__social-link" target="_blank"
+              rel="noopener noreferrer" aria-label="NEXOVA sur LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="NEXOVA sur Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Navigation -->
+        <nav aria-label="Navigation pied de page">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link">Accueil</a></li>
+            <li><a href="expertise.html" class="footer__link">Expertises</a></li>
+            <li><a href="realisations.html" class="footer__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="footer__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="footer__link">Contact & Devis</a></li>
+          </ul>
+        </nav>
+
+        <!-- Expertises -->
+        <nav aria-label="Nos expertises">
+          <p class="footer__col-title">Expertises</p>
+          <ul class="footer__links" role="list">
+            <li><a href="expertise.html" class="footer__link">Création Print</a></li>
+            <li><a href="expertise.html" class="footer__link">Grands Formats</a></li>
+            <li><a href="expertise.html" class="footer__link">Conception graphique</a></li>
+            <li><a href="expertise.html" class="footer__link">Finition premium & Vernis mat</a></li>
+            <li><a href="expertise.html" class="footer__link">Production</a></li>
+            <li><a href="expertise.html" class="footer__link">Marquage & Embossage</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact -->
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <address class="footer__address">
+            <strong>NEXOVA</strong>
+            12 Rue des Studios<br>
+            75009 Paris<br><br>
+            <a href="tel:+33142001122">01 42 00 11 22</a><br>
+            <a href="mailto:contact@nexova-agence de communication.fr">contact@nexova-agence de communication.fr</a><br><br>
+            <span>Lun–Ven : 8h00–18h00</span>
+          </address>
+          <div style="margin-top:1.25rem;">
+            <a href="https://www.fnexova.fr" class="footer__link" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:.4rem;">
+              Groupe FNEXOVA
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" style="width:12px;height:12px;" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bas de footer -->
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          &copy; <span id="current-year">2026</span> NEXOVA. Tous droits réservés.
+        </p>
+        <nav class="footer__legal" aria-label="Liens légaux">
+          <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
+          <a href="cgv.html" class="footer__legal-link">CGV</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Retour en haut"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </svg></button>
+  <button class="a11y-btn" aria-label="Options d'accessibilité" aria-expanded="false" aria-controls="a11y-panel"><svg
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      aria-hidden="true">
+      <circle cx="12" cy="4" r="2" />
+      <path
+        d="M15.89 8.11C15.5 7.72 14.83 7 13 7h-2c-1.83 0-2.5.72-2.89 1.11l-3.31 3.3a.996.996 0 1 0 1.41 1.41L8 11v10h2v-5h4v5h2V11l1.79 1.82a.996.996 0 1 0 1.41-1.41l-3.31-3.31z" />
+    </svg></button>
+  <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Options d'accessibilité">
+    <p class="a11y-panel__title">Accessibilité</p>
+    <div class="a11y-option"><span>Taille du texte</span>
+      <div class="a11y-toggle"><button id="font-decrease" aria-label="Réduire">A−</button><button id="font-reset"
+          aria-label="Réinitialiser">A</button><button id="font-increase" aria-label="Augmenter">A+</button></div>
+    </div>
+    <div class="a11y-option"><span>Contraste élevé</span>
+      <div class="a11y-toggle"><button id="high-contrast" style="width:auto;padding:0 .75rem;">Activer</button></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script src="interactions.js" defer></script>
+</body>
+</html>

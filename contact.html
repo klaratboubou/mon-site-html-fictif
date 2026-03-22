@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Devis — NEXOVA | Agence de communication Paris</title>
+  <meta name="description"
+    content="Contactez NEXOVA pour un devis d'création personnalisé. Print, grand format, production, finition premium. 01 42 00 11 22 — contact@nexova.fr — 12 Rue des Studios, 75009 Paris.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="Photo/Logo_La Déclinaison Secondaire.png" type="image/png">
+  <link rel="canonical" href="https://www.nexova.fr/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.nexova.fr/contact.html">
+  <meta property="og:title" content="Contact & Devis NEXOVA — Agence de communication Île-de-France">
+  <meta property="og:description" content="Obtenez votre devis d'création sous 24h. Print, grand format, production.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start
+    }
+
+    .contact-info {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem)
+    }
+
+    .info-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 1.5rem
+    }
+
+    .info-card__title {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-semi);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--clr-ink-muted);
+      margin-bottom: 1.25rem
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .875rem;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--clr-border-light)
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0
+    }
+
+    .info-item__ico {
+      width: 36px;
+      height: 36px;
+      background: var(--clr-rose-light);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-rose);
+      flex-shrink: 0;
+      margin-top: 2px
+    }
+
+    .info-item__ico svg {
+      width: 16px;
+      height: 16px
+    }
+
+    .info-item__label {
+      font-size: var(--fs-xs);
+      color: var(--clr-ink-muted);
+      margin-bottom: .2rem;
+      font-weight: var(--fw-semi);
+      letter-spacing: .04em;
+      text-transform: uppercase
+    }
+
+    .info-item__val {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.6
+    }
+
+    .info-item__val a {
+      color: var(--clr-rose);
+      transition: color var(--transition)
+    }
+
+    .info-item__val a:hover {
+      color: var(--clr-rose-dark)
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .25rem .75rem;
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft)
+    }
+
+    .hours-grid .day {
+      font-weight: var(--fw-medium)
+    }
+
+    .hours-grid .closed {
+      color: var(--clr-ink-muted)
+    }
+
+    /* Formulaire */
+    .form-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem
+    }
+
+    .form-title {
+      font-size: var(--fs-xl);
+      margin-bottom: .5rem
+    }
+
+    .form-subtitle {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      margin-bottom: 2rem
+    }
+
+    .form-section {
+      margin-bottom: 2rem
+    }
+
+    .form-section__title {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-semi);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--clr-rose);
+      margin-bottom: 1.25rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--clr-rose-light)
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      margin-bottom: 1rem
+    }
+
+    .form-group:last-child {
+      margin-bottom: 0
+    }
+
+    .form-label {
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      color: var(--clr-ink)
+    }
+
+    .form-label .required {
+      color: var(--clr-rose);
+      margin-left: 2px
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      font-family: var(--ff-body);
+      font-size: var(--fs-sm);
+      color: var(--clr-ink);
+      background: var(--clr-bg);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--clr-rose);
+      box-shadow: 0 0 0 3px rgba(194, 24, 91, .1);
+      background: var(--clr-white)
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--clr-ink-muted)
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.6
+    }
+
+    .form-select {
+      cursor: none
+    }
+
+    .form-hint {
+      font-size: var(--fs-xs);
+      color: var(--clr-ink-muted);
+      margin-top: .25rem
+    }
+
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      cursor: none
+    }
+
+    .form-checkbox input[type=checkbox] {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid var(--clr-border);
+      border-radius: 4px;
+      cursor: none;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--clr-rose)
+    }
+
+    .form-checkbox label {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.5;
+      cursor: none
+    }
+
+    .form-checkbox a {
+      color: var(--clr-rose)
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 1em 2em;
+      font-size: var(--fs-base)
+    }
+
+    .form-success {
+      display: none;
+      background: var(--clr-rose-light);
+      border: 1px solid var(--clr-rose);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--clr-rose);
+      margin-top: 1.5rem
+    }
+
+    .form-success.visible {
+      display: block
+    }
+
+    .form-success svg {
+      width: 32px;
+      height: 32px;
+      margin: 0 auto .75rem
+    }
+
+    /* Map */
+    .map-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--clr-border-light);
+      margin-top: 3rem
+    }
+
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 400px;
+      border: 0
+    }
+
+    @media(max-width:1024px) {
+      .contact-layout {
+        grid-template-columns: 1fr
+      }
+
+      .contact-info {
+        position: static
+      }
+    }
+
+    @media(max-width:600px) {
+      .form-row {
+        grid-template-columns: 1fr
+      }
+
+      .form-card {
+        padding: 1.5rem
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="interactions.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <!-- Curseur personnalisé -->
+  <div class="cursor-crop-marks" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="index.html" class="nav__logo" aria-label="NEXOVA — Accueil">
+            <img src="Photo/Logo_La Déclinaison Secondaire.png" alt="NEXOVA" class="nav__logo-img">
+          </a>
+          <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="expertise.html" class="nav__link">Expertises</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="nav__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary nav__cta"><svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>Demander un devis</a>
+          <button class="nav__burger" aria-label="Ouvrir le menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <a href="index.html" class="nav__mobile-link">Accueil</a>
+      <a href="expertise.html" class="nav__mobile-link">Expertises</a>
+      <a href="realisations.html" class="nav__mobile-link">Réalisations</a>
+      <a href="histoire.html" class="nav__mobile-link">Notre Histoire</a>
+      <a href="contact.html" class="nav__mobile-link active">Contact</a>
+      <a href="contact.html" class="btn btn-primary mt-4">Demander un devis</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero-secondary section--alt">
+      <div class="container">
+        <span class="section-label hero-secondary__label" aria-hidden="true">Parlons de votre projet</span>
+        <h1 class="hero-secondary__title">Contact & Devis</h1>
+        <p class="hero-secondary__sub">Décrivez-nous votre projet d'création. Nous vous répondons sous 24h avec un
+          devis personnalisé.</p>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a><span aria-hidden="true">›</span><span aria-current="page">Contact</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Infos de contact -->
+          <aside class="contact-info reveal-left" aria-label="Informations de contact">
+
+            <div class="info-card">
+              <p class="info-card__title">Nous contacter</p>
+              <div class="info-item">
+                <div class="info-item__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.43 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.76a16 16 0 0 0 6 6l1.58-1.36a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z" />
+                  </svg></div>
+                <div>
+                  <p class="info-item__label">Téléphone</p>
+                  <p class="info-item__val"><a href="tel:+33142001122">01 42 00 11 22</a></p>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-item__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg></div>
+                <div>
+                  <p class="info-item__label">Email</p>
+                  <p class="info-item__val"><a
+                      href="/cdn-cgi/l/email-protection#f1929e9f85909285b198839e8190df9783"><span class="__cf_email__"
+                        data-cfemail="aecdc1c0dacfcddaeec7dcc1decf80c8dc">[email&#160;protected]</span></a></p>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-item__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg></div>
+                <div>
+                  <p class="info-item__label">Adresse</p>
+                  <p class="info-item__val">12 Rue des Studios<br>75009 Paris</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <p class="info-card__title">Horaires d'ouverture</p>
+              <div class="hours-grid" aria-label="Horaires">
+                <span class="day">Lundi</span><span>8h00 – 18h00</span>
+                <span class="day">Mardi</span><span>8h00 – 18h00</span>
+                <span class="day">Mercredi</span><span>8h00 – 18h00</span>
+                <span class="day">Jeudi</span><span>8h00 – 18h00</span>
+                <span class="day">Vendredi</span><span>8h00 – 18h00</span>
+                <span class="day">Samedi</span><span class="closed">Fermé</span>
+                <span class="day">Dimanche</span><span class="closed">Fermé</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <p class="info-card__title">Retrouvez-nous</p>
+              <div style="display:flex;gap:.75rem;">
+                <a href="#" class="btn btn-outline" target="_blank"
+                  rel="noopener noreferrer" aria-label="LinkedIn NEXOVA"
+                  style="flex:1;justify-content:center;font-size:var(--fs-xs);">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    style="width:16px;height:16px" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                  LinkedIn
+                </a>
+                <a href="#" class="btn btn-outline" target="_blank" rel="noopener noreferrer"
+                  aria-label="Instagram NEXOVA" style="flex:1;justify-content:center;font-size:var(--fs-xs);">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" style="width:16px;height:16px" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                  Instagram
+                </a>
+              </div>
+            </div>
+
+          </aside>
+
+          <!-- Formulaire -->
+          <div class="reveal-right">
+            <div class="form-card">
+              <h2 class="form-title">Demande de devis</h2>
+              <p class="form-subtitle">Remplissez ce formulaire, notre équipe vous recontacte sous 24h ouvrées avec un
+                devis détaillé.</p>
+
+              <form id="devis-form" novalidate aria-label="Formulaire de demande de devis">
+
+                <!-- Identité -->
+                <fieldset class="form-section">
+                  <legend class="form-section__title">1. Vos coordonnées</legend>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="prenom">Prénom <span class="required"
+                          aria-label="champ obligatoire">*</span></label>
+                      <input type="text" id="prenom" name="prenom" class="form-input" placeholder="Jean" required
+                        autocomplete="given-name">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="nom">Nom <span class="required"
+                          aria-label="champ obligatoire">*</span></label>
+                      <input type="text" id="nom" name="nom" class="form-input" placeholder="Dupont" required
+                        autocomplete="family-name">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="email">Email <span class="required"
+                          aria-label="champ obligatoire">*</span></label>
+                      <input type="email" id="email" name="email" class="form-input"
+                        placeholder="jean.dupont@entreprise.fr" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="telephone">Téléphone</label>
+                      <input type="tel" id="telephone" name="telephone" class="form-input" placeholder="06 00 00 00 00"
+                        autocomplete="tel">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="societe">Société / Organisation</label>
+                      <input type="text" id="societe" name="societe" class="form-input"
+                        placeholder="Nom de votre entreprise" autocomplete="organization">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="poste">Poste / Fonction</label>
+                      <input type="text" id="poste" name="poste" class="form-input"
+                        placeholder="Directeur marketing, Graphiste...">
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!-- Type de projet -->
+                <fieldset class="form-section">
+                  <legend class="form-section__title">2. Votre projet</legend>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="type-support">Type de support <span class="required"
+                          aria-label="champ obligatoire">*</span></label>
+                      <select id="type-support" name="type-support" class="form-select" required>
+                        <option value="" disabled selected>Sélectionnez un support</option>
+                        <optgroup label="Documents commerciaux">
+                          <option>Catalogue / Brochure</option>
+                          <option>Plaquette commerciale</option>
+                          <option>Flyer / Prospectus</option>
+                          <option>Dépliant</option>
+                        </optgroup>
+                        <optgroup label="Édition">
+                          <option>Livre / Magazine</option>
+                          <option>Rapport annuel</option>
+                          <option>Journal interne</option>
+                        </optgroup>
+                        <optgroup label="Communication visuelle">
+                          <option>Affiche</option>
+                        </optgroup>
+                        <optgroup label="Identité">
+                          <option>Carte de visite</option>
+                          <option>Enveloppe / Papier en-tête</option>
+                        </optgroup>
+                        <optgroup label="Packaging & autre">
+                          <option>Packaging / Boîte</option>
+                          <option>Autre support</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="technique">Technique souhaitée</label>
+                      <select id="technique" name="technique" class="form-select">
+                        <option value="" disabled selected>Technique d'création</option>
+                        <option>Print</option>
+                        <option>Grand Format (A0)</option>
+                        <option>Numérique courte série</option>
+                        <option>Je ne sais pas — conseil souhaité</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="format">Format</label>
+                      <select id="format" name="format" class="form-select">
+                        <option value="" disabled selected>Sélectionnez un format</option>
+                        <option>A3 (297×420 mm)</option>
+                        <option>A4 (210×297 mm)</option>
+                        <option>A5 (148×210 mm)</option>
+                        <option>A6 (105×148 mm)</option>
+                        <option>85×54 mm (carte de visite)</option>
+                        <option>Carré 210×210 mm</option>
+                        <option>B1 (707×1000 mm)</option>
+                        <option>Format personnalisé</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="format-custom">Format personnalisé (mm)</label>
+                      <input type="text" id="format-custom" name="format-custom" class="form-input"
+                        placeholder="ex : 150 × 200 mm">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="nb-pages">Nombre de pages</label>
+                      <input type="number" id="nb-pages" name="nb-pages" class="form-input"
+                        placeholder="ex : 16, 32, 48..." min="1">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="quantite">Quantité <span class="required"
+                          aria-label="champ obligatoire">*</span></label>
+                      <select id="quantite" name="quantite" class="form-select" required>
+                        <option value="" disabled selected>Nombre d'exemplaires</option>
+                        <option>Moins de 100</option>
+                        <option>100 – 500</option>
+                        <option>500 – 1 000</option>
+                        <option>1 000 – 5 000</option>
+                        <option>5 000 – 10 000</option>
+                        <option>Plus de 10 000</option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!-- Supports & finitions -->
+                <fieldset class="form-section">
+                  <legend class="form-section__title">3. Papier &amp; finitions</legend>
+
+                  <!-- Champs couverture/intérieur (supports avec 2 papiers) -->
+                  <div id="couv-section" style="display:none;">
+                    <p style="font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--clr-ink-muted);margin-bottom:.5rem;">Couverture</p>
+                    <div class="form-row" style="margin-bottom:1rem;">
+                      <div class="form-group">
+                        <label class="form-label" for="papier-couv">Papier couverture</label>
+                        <select id="papier-couv" name="papier-couv" class="form-select">
+                          <option value="" disabled selected>Type de papier</option>
+                          <option>Papier premium</option>
+                          <option>Papier mat</option>
+                          <option>Print (bouffant)</option>
+                          <option>Recyclé</option>
+                          <option>Kraft</option>
+                          <option>Je ne sais pas</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="épaisseur-couv">Épaisseur couverture</label>
+                        <select id="épaisseur-couv" name="épaisseur-couv" class="form-select">
+                          <option value="" disabled selected>Épaisseur</option>
+                          <option>200 g</option>
+                          <option>250 g</option>
+                          <option>300 g</option>
+                          <option>350 g</option>
+                          <option>Je ne sais pas</option>
+                        </select>
+                      </div>
+                    </div>
+                    <p style="font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--clr-ink-muted);margin-bottom:.5rem;">Intérieur</p>
+                    <div class="form-row" style="margin-bottom:1rem;">
+                      <div class="form-group">
+                        <label class="form-label" for="papier-int">Papier intérieur</label>
+                        <select id="papier-int" name="papier-int" class="form-select">
+                          <option value="" disabled selected>Type de papier</option>
+                          <option>Papier premium</option>
+                          <option>Papier mat</option>
+                          <option>Print (bouffant)</option>
+                          <option>Recyclé</option>
+                          <option>Je ne sais pas</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="épaisseur-int">Épaisseur intérieur</label>
+                        <select id="épaisseur-int" name="épaisseur-int" class="form-select">
+                          <option value="" disabled selected>Épaisseur</option>
+                          <option>80 g</option>
+                          <option>90 g</option>
+                          <option>115 g</option>
+                          <option>135 g</option>
+                          <option>150 g</option>
+                          <option>170 g</option>
+                          <option>Je ne sais pas</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Papier/épaisseur simple (autres supports) -->
+                  <div id="papier-simple-section">
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label" for="papier">Type de papier</label>
+                        <select id="papier" name="papier" class="form-select">
+                          <option value="" disabled selected>Sélectionnez un papier</option>
+                          <option>Papier premium</option>
+                          <option>Papier mat</option>
+                          <option>Print (bouffant)</option>
+                          <option>Recyclé</option>
+                          <option>Kraft</option>
+                          <option>Je ne sais pas — conseil souhaité</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="épaisseur">Épaisseur (g)</label>
+                        <select id="épaisseur" name="épaisseur" class="form-select">
+                          <option value="" disabled selected>Épaisseur</option>
+                          <option>90 g</option>
+                          <option>115 g</option>
+                          <option>135 g</option>
+                          <option>150 g</option>
+                          <option>170 g</option>
+                          <option>200 g</option>
+                          <option>250 g</option>
+                          <option>300 g</option>
+                          <option>350 g</option>
+                          <option>Je ne sais pas</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Finitions — toujours visibles -->
+                  <div class="form-group" style="margin-top:1rem;">
+                    <label class="form-label">Finitions souhaitées</label>
+                    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem .75rem;margin-top:.5rem;">
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="finition premium-mat"><span>Finition premium mat</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="finition premium-brillant"><span>Finition premium brillant</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="velours"><span>Finition premium velours</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="vernis-uv-total"><span>Vernis mat total</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="vernis-uv-selectif"><span>Vernis mat sélectif</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="marquage"><span>Marquage à chaud</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="embossage"><span>Embossage</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="decoupe"><span>Découpe spéciale</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="pliage"><span>Pliage</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="reliure"><span>Reliure (type à préciser)</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="perforation"><span>Perforation</span></label>
+                      <label class="form-checkbox"><input type="checkbox" name="finition" value="conseil"><span>Je souhaite un conseil</span></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group" style="margin-top:.75rem;">
+                    <label class="form-label" for="reliure-type">Type de reliure (si concerné)</label>
+                    <select id="reliure-type" name="reliure-type" class="form-select">
+                      <option value="" disabled selected>Type de reliure</option>
+                      <option>Agrafage centre</option>
+                      <option>Dos carré collé</option>
+                      <option>Spirale plastique</option>
+                      <option>Spirale métal</option>
+                      <option>Dos toilé</option>
+                      <option>Non concerné</option>
+                    </select>
+                  </div>
+
+                </fieldset>
+
+                <!-- Fichiers & délais -->
+                <fieldset class="form-section">
+                  <legend class="form-section__title">4. Fichiers & délais</legend>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="etat-fichiers">État de vos fichiers</label>
+                      <select id="etat-fichiers" name="etat-fichiers" class="form-select">
+                        <option value="" disabled selected>Vos fichiers sont…</option>
+                        <option>Prêts à concevoir (PDF HD)</option>
+                        <option>À finaliser / corriger</option>
+                        <option>À créer — besoin de création graphique</option>
+                        <option>Je ne sais pas encore</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="delai">Délai souhaité</label>
+                      <select id="delai" name="delai" class="form-select">
+                        <option value="" disabled selected>Délai de livraison</option>
+                        <option>Urgent — moins de 5 jours</option>
+                        <option>Standard — 1 à 2 semaines</option>
+                        <option>Sans urgence — 3 à 4 semaines</option>
+                        <option>À définir ensemble</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="livraison">Mode de livraison souhaité</label>
+                    <select id="livraison" name="livraison" class="form-select">
+                      <option value="" disabled selected>Livraison</option>
+                      <option>Retrait en studio (Paris)</option>
+                      <option>Livraison à une adresse</option>
+                      <option>Les deux (à définir)</option>
+                    </select>
+                  </div>
+                </fieldset>
+
+                <!-- Message -->
+                <fieldset class="form-section">
+                  <legend class="form-section__title">5. Informations complémentaires</legend>
+                  <div class="form-group">
+                    <label class="form-label" for="message">Description de votre projet</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="5"
+                      placeholder="Décrivez votre projet, vos besoins spécifiques, vos contraintes techniques ou budgétaires…"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-checkbox">
+                      <input type="checkbox" name="rgpd" id="rgpd" required>
+                      <span>J'accepte que mes données soient utilisées pour traiter ma demande de devis. <a
+                          href="mentions-legales.html">En savoir plus</a>.</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <button type="submit" class="btn btn-primary form-submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" aria-hidden="true">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                  </svg>
+                  Envoyer ma demande de devis
+                </button>
+
+              </form>
+
+              <div class="form-success" id="form-success" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" aria-hidden="true">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <p style="font-size:var(--fs-md);font-weight:var(--fw-semi);margin-bottom:.5rem;">Demande envoyée avec
+                  succès !</p>
+                <p style="font-size:var(--fs-sm);">Notre équipe vous recontacte sous 24h ouvrées. Merci de votre
+                  confiance.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section Venez nous rendre visite -->
+        <div class="reveal" style="margin-top:3rem;background:var(--clr-ink);border-radius:var(--radius-lg);padding:2.5rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(194,24,91,.15) 0%,transparent 70%);pointer-events:none;"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:1;">
+            <div>
+              <span style="display:inline-block;font-size:var(--fs-xs);font-weight:var(--fw-semi);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1rem;">Nous trouver</span>
+              <h2 style="color:white;margin-bottom:1rem;">Venez nous<br>rendre visite</h2>
+              <p style="color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:1.5rem;">Notre studio est ouvert du lundi au vendredi. Rien de mieux qu'une visite pour voir les équipements tourner, toucher les matières et parler de votre projet directement avec l'équipe.</p>
+              <div style="display:flex;flex-direction:column;gap:.875rem;margin-bottom:1.5rem;">
+                <div style="display:flex;align-items:flex-start;gap:.875rem;">
+                  <div style="width:36px;height:36px;background:rgba(194,24,91,.2);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:#f48fb1;flex-shrink:0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-size:var(--fs-xs);font-weight:var(--fw-semi);color:white;margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.05em;">Adresse</p>
+                    <p style="font-size:var(--fs-sm);color:rgba(255,255,255,.75);">12 Rue des Studios<br>75009 Paris</p>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:.875rem;">
+                  <div style="width:36px;height:36px;background:rgba(194,24,91,.2);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:#f48fb1;flex-shrink:0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-size:var(--fs-xs);font-weight:var(--fw-semi);color:white;margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.05em;">Horaires</p>
+                    <p style="font-size:var(--fs-sm);color:rgba(255,255,255,.75);">Lundi – Vendredi : 8h00 – 18h00</p>
+                  </div>
+                </div>
+              </div>
+              <a href="https://maps.google.com/?q=550+Rue+du+Pré+de+la+Roquette+75009+Paris" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color:rgba(255,255,255,.25);color:white;">
+                Ouvrir dans Maps
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <div style="border-radius:var(--radius-lg);overflow:hidden;border:2px solid rgba(255,255,255,.08);aspect-ratio:4/3;">
+              <iframe src="https://maps.google.com/maps?q=12+Rue+des+Studios+75009+Paris&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation NEXOVA" style="width:100%;height:100%;border:0;display:block;"></iframe>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__grid">
+
+        <!-- Colonne marque -->
+        <div>
+          <img src="Photo/Logo_La Déclinaison Responsive.png" alt="Logo nexova" width="150">
+          <p class="footer__tagline">Transforme des pages blanches en projets qui vous ressemblent. Depuis 1970, au
+            service de vos créations les plus exigeantes.</p>
+          <nav class="footer__social" aria-label="Réseaux sociaux NEXOVA">
+            <a href="#" class="footer__social-link" target="_blank"
+              rel="noopener noreferrer" aria-label="NEXOVA sur LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="NEXOVA sur Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Navigation -->
+        <nav aria-label="Navigation pied de page">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link">Accueil</a></li>
+            <li><a href="expertise.html" class="footer__link">Expertises</a></li>
+            <li><a href="realisations.html" class="footer__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="footer__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="footer__link">Contact & Devis</a></li>
+          </ul>
+        </nav>
+
+        <!-- Expertises -->
+        <nav aria-label="Nos expertises">
+          <p class="footer__col-title">Expertises</p>
+          <ul class="footer__links" role="list">
+            <li><a href="expertise.html" class="footer__link">Création Print</a></li>
+            <li><a href="expertise.html" class="footer__link">Grands Formats</a></li>
+            <li><a href="expertise.html" class="footer__link">Conception graphique</a></li>
+            <li><a href="expertise.html" class="footer__link">Finition premium & Vernis mat</a></li>
+            <li><a href="expertise.html" class="footer__link">Production</a></li>
+            <li><a href="expertise.html" class="footer__link">Marquage & Embossage</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact -->
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <address class="footer__address">
+            <strong>NEXOVA</strong>
+            12 Rue des Studios<br>
+            75009 Paris<br><br>
+            <a href="tel:+33142001122">01 42 00 11 22</a><br>
+            <a href="mailto:contact@nexova-agence de communication.fr">contact@nexova-agence de communication.fr</a><br><br>
+            <span>Lun–Ven : 8h00–18h00</span>
+          </address>
+          <div style="margin-top:1.25rem;">
+            <a href="https://www.fnexova.fr" class="footer__link" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:.4rem;">
+              Groupe FNEXOVA
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" style="width:12px;height:12px;" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bas de footer -->
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          &copy; <span id="current-year">2026</span> NEXOVA. Tous droits réservés.
+        </p>
+        <nav class="footer__legal" aria-label="Liens légaux">
+          <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
+          <a href="cgv.html" class="footer__legal-link">CGV</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Retour en haut"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </svg></button>
+  <button class="a11y-btn" aria-label="Options d'accessibilité" aria-expanded="false" aria-controls="a11y-panel"><svg
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      aria-hidden="true">
+      <circle cx="12" cy="4" r="2" />
+      <path
+        d="M15.89 8.11C15.5 7.72 14.83 7 13 7h-2c-1.83 0-2.5.72-2.89 1.11l-3.31 3.3a.996.996 0 1 0 1.41 1.41L8 11v10h2v-5h4v5h2V11l1.79 1.82a.996.996 0 1 0 1.41-1.41l-3.31-3.31z" />
+    </svg></button>
+  <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Options d'accessibilité">
+    <p class="a11y-panel__title">Accessibilité</p>
+    <div class="a11y-option"><span>Taille du texte</span>
+      <div class="a11y-toggle"><button id="font-decrease" aria-label="Réduire">A−</button><button id="font-reset"
+          aria-label="Réinitialiser">A</button><button id="font-increase" aria-label="Augmenter">A+</button></div>
+    </div>
+    <div class="a11y-option"><span>Contraste élevé</span>
+      <div class="a11y-toggle"><button id="high-contrast" style="width:auto;padding:0 .75rem;">Activer</button></div>
+    </div>
+  </div>
+
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const supportsAvecCouv = ['Catalogue / Brochure','Livre / Magazine','Rapport annuel','Journal interne','Plaquette commerciale'];
+    const sel = document.getElementById('type-support');
+    const couvSection  = document.getElementById('couv-section');
+    const papierSimple = document.getElementById('papier-simple-section');
+    if (sel && couvSection && papierSimple) {
+      sel.addEventListener('change', function() {
+        const needsCouv = supportsAvecCouv.includes(this.value);
+        couvSection.style.display  = needsCouv ? 'block' : 'none';
+        papierSimple.style.display = needsCouv ? 'none'  : 'block';
+      });
+    }
+  });
+  </script>
+  <script src="main.js" defer></script>
+  <script src="interactions.js" defer></script>
+</body>
+</html>

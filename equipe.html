@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Équipe — Les hommes et femmes d'NEXOVA</title>
+  <meta name="description"
+    content="Découvrez l'équipe NEXOVA : commerciaux, techniciens conception graphique, conducteurs de équipement et techniciens. Des passionnés au service de vos projets d'création depuis 1970.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.nexova.fr/equipe.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"Équipe NEXOVA","url":"https://www.nexova.fr/equipe.html","isPartOf":{"@type":"WebSite","name":"NEXOVA","url":"https://www.nexova.fr"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* ── INTRO QUOTE ─────────────────────────────────────────── */
+    .team-intro-quote {
+      max-width: 72ch;
+      margin-inline: auto;
+      text-align: center;
+      padding-block: 5rem 3rem;
+    }
+    .team-intro-quote blockquote {
+      font-family: var(--ff-title);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.3;
+      color: var(--clr-ink);
+      margin-bottom: 1.25rem;
+    }
+    .team-intro-quote blockquote::before { content: '\201C'; color: var(--clr-rose); }
+    .team-intro-quote blockquote::after  { content: '\201D'; color: var(--clr-rose); }
+    .team-intro-quote cite {
+      font-style: normal;
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+    }
+    .team-intro-quote cite::before {
+      content: '';
+      width: 32px; height: 2px;
+      background: var(--clr-rose);
+      display: inline-block;
+    }
+
+    /* ── GRILLE ÉQUIPE ───────────────────────────────────────── */
+    .team-full-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .team-member {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .team-member:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .team-member__photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, var(--clr-rose-light) 0%, rgba(194,24,91,.04) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: .5rem;
+      color: var(--clr-rose);
+      font-size: var(--fs-xs);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      overflow: hidden;
+      position: relative;
+    }
+    .team-member__photo img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .team-member__photo-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    }
+    .team-member__photo-placeholder svg { width:48px; height:48px; opacity:.35; }
+    .team-member__photo-placeholder span { font-size:.65rem; opacity:.6; }
+    .team-member__body {
+      padding: 1.5rem;
+    }
+    .team-member__name {
+      font-family: var(--ff-title);
+      font-size: var(--fs-xl);
+      color: var(--clr-ink);
+      margin-bottom: .15rem;
+    }
+    .team-member__role {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-semi);
+      color: var(--clr-rose);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: .9rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .team-member__role::before {
+      content: '';
+      width: 18px; height: 2px;
+      background: var(--clr-rose);
+      display: inline-block;
+    }
+    .team-member__bio {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.75;
+    }
+    .team-member__dept {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: 1rem;
+      padding: .3em .9em;
+      border-radius: var(--radius-full);
+      background: var(--clr-rose-light);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-semi);
+      color: var(--clr-rose);
+      letter-spacing: .04em;
+    }
+
+    /* ── SECTION PÔLES ───────────────────────────────────────── */
+    .dept-section {
+      margin-bottom: 4rem;
+    }
+    .dept-section__header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--clr-border);
+    }
+    .dept-section__icon {
+      width: 48px; height: 48px;
+      background: var(--clr-rose-light);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-rose);
+      flex-shrink: 0;
+    }
+    .dept-section__icon svg { width: 22px; height: 22px; }
+    .dept-section__title {
+      font-family: var(--ff-title);
+      font-size: var(--fs-2xl);
+      color: var(--clr-ink);
+    }
+    .dept-section__count {
+      margin-left: auto;
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-muted);
+    }
+
+    /* ── VALEURS ─────────────────────────────────────────────── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .value-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .value-card__icon {
+      width: 56px; height: 56px;
+      background: var(--clr-rose-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+      color: var(--clr-rose);
+    }
+    .value-card__icon svg { width: 24px; height: 24px; }
+    .value-card__title {
+      font-family: var(--ff-title);
+      font-size: var(--fs-lg);
+      margin-bottom: .5rem;
+    }
+    .value-card p {
+      font-size: var(--fs-sm);
+      color: var(--clr-ink-soft);
+      line-height: 1.7;
+    }
+
+    /* ── REJOINDRE ───────────────────────────────────────────── */
+    .join-section {
+      background: var(--clr-rose);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .join-section::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .join-section h2 { color: white; margin-bottom: 1rem; position: relative; z-index: 1; }
+    .join-section p { color: rgba(255,255,255,.85); max-width: 52ch; margin-inline: auto; margin-bottom: 2rem; position: relative; z-index: 1; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 1200px) {
+      .team-full-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .team-full-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-grid   { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .team-full-grid { grid-template-columns: 1fr; }
+      .values-grid   { grid-template-columns: 1fr; }
+      .join-section  { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="interactions.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <div class="cursor-crop-marks" aria-hidden="true"></div>
+
+  <!-- ══ NAVIGATION ══════════════════════════════════════════ -->
+  <header>
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="index.html" class="nav__logo" aria-label="NEXOVA — Accueil">
+            <img src="Photo/Logo_La Déclinaison Secondaire.png" alt="NEXOVA" class="nav__logo-img">
+          </a>
+          <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="expertise.html" class="nav__link">Expertises</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="nav__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary nav__cta">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            Demander un devis
+          </a>
+          <button class="nav__burger" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav__mobile" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <a href="index.html" class="nav__mobile-link">Accueil</a>
+      <a href="expertise.html" class="nav__mobile-link">Expertises</a>
+      <a href="realisations.html" class="nav__mobile-link">Réalisations</a>
+      <a href="histoire.html" class="nav__mobile-link">Notre Histoire</a>
+      <a href="contact.html" class="nav__mobile-link">Contact</a>
+      <a href="contact.html" class="btn btn-primary mt-4">Demander un devis</a>
+    </div>
+  </header>
+
+  <!-- ══ CONTENU ═════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- Hero secondaire -->
+    <section class="hero-secondary section--alt">
+      <div class="container">
+        <span class="section-label hero-secondary__label" aria-hidden="true">L'équipe</span>
+        <h1 class="hero-secondary__title">Les visages d'NEXOVA</h1>
+        <p class="hero-secondary__sub">
+          Derrière chaque création réussie, il y a une équipe qui s'est investie. Commerciaux, techniciens conception graphique, conducteurs de équipement, techniciens — découvrez celles et ceux qui donnent vie à vos projets.
+        </p>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Notre Équipe</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Citation intro -->
+    <section class="section" aria-label="Notre philosophie">
+      <div class="container">
+        <div class="team-intro-quote reveal">
+          <blockquote>
+            Chez NEXOVA, on ne fait pas de l'création. On fabrique ce qui vous représente.
+          </blockquote>
+          <cite>Sophie Lambert, Directrice générale</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PÔLE COMMERCIAL ───────────────────────────────── -->
+    <section class="section section--alt" aria-labelledby="dept-commercial">
+      <div class="container">
+
+        <div class="dept-section">
+          <div class="dept-section__header">
+            <div class="dept-section__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h2 class="dept-section__title" id="dept-commercial">Pôle commercial &amp; devis</h2>
+            <span class="dept-section__count">Votre premier contact</span>
+          </div>
+
+          <div class="team-full-grid">
+
+            <article class="team-member reveal">
+              <div class="team-member__photo">
+                <!-- Remplacez par : <img src="Photo/equipe-[prenom-nom].jpg" alt="[Prénom Nom] — [Poste] NEXOVA"> -->
+                <div class="team-member__photo-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                  <span>Photo à ajouter</span>
+                </div>
+              </div>
+              <div class="team-member__body">
+                <p class="team-member__name">Prénom Nom</p>
+                <p class="team-member__role">Responsable commercial</p>
+                <p class="team-member__bio">
+                  Premier interlocuteur pour vos projets, il vous accompagne du premier échange jusqu'à la validation de votre validation client. Disponible, réactif, il connaît votre métier autant que le nôtre.
+                </p>
+                <span class="team-member__dept">Commercial &amp; devis</span>
+              </div>
+            </article>
+
+            <article class="team-member reveal reveal-delay-1">
+              <div class="team-member__photo">
+                <div class="team-member__photo-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                  <span>Photo à ajouter</span>
+                </div>
+              </div>
+              <div class="team-member__body">
+                <p class="team-member__name">Prénom Nom</p>
+                <p class="team-member__role">Chargé(e) de clientèle</p>
+                <p class="team-member__bio">
+                  En charge du suivi de vos commandes en cours, elle s'assure que chaque étape se déroule selon le planning prévu et vous tient informé(e) à chaque avancement.
+                </p>
+                <span class="team-member__dept">Commercial &amp; devis</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ── PÔLE PRÉPRESSE ──────────────────────────────── -->
+        <div class="dept-section">
+          <div class="dept-section__header">
+            <div class="dept-section__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
+            </div>
+            <h2 class="dept-section__title" id="dept-preéquipement">Conception graphique &amp; PAO</h2>
+            <span class="dept-section__count">La qualité commence ici</span>
+          </div>
+
+          <div class="team-full-grid">
+
+            <article class="team-member reveal">
+              <div class="team-member__photo">
+                <div class="team-member__photo-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                  <span>Photo à ajouter</span>
+                </div>
+              </div>
+              <div class="team-member__body">
+                <p class="team-member__name">Prénom Nom</p>
+                <p class="team-member__role">Responsable conception graphique</p>
+                <p class="team-member__bio">
+                  Vos fichiers passent entre ses mains avant toute mise en équipement : vérification, calibration chromatique, maquettage. Aucun détail ne lui échappe.
+                </p>
+                <span class="team-member__dept">Conception graphique</span>
+              </div>
+            </article>
+
+            <article class="team-member reveal reveal-delay-1">
+              <div class="team-member__photo">
+                <div class="team-member__photo-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                  <span>Photo à ajouter</span>
+                </div>
+              </div>
+              <div class="team-member__body">
+                <p class="team-member__name">Prénom Nom</p>
+                <p class="team-member__role">Technicien(ne) conception graphique</p>
+                <p class="team-member__bio">
+                  Maîtrise parfaite des logiciels de la suite Adobe et des contraintes d'création print. Il transforme vos fichiers en fichiers prêtes à rouler.
+                </p>
+                <span class="team-member__dept">Conception graphique</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ── PÔLE PRESSE ─────────────────────────────────── -->
+        <div class="dept-section">
+          <div class="dept-section__header">
+            <div class="dept-section__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            </div>
+            <h2 class="dept-section__title" id="dept-équipement">Création print</h2>
+            <span class="dept-section__count">Le cœur de l'studio</span>
+          </div>
+
+          <div class="team-full-grid">
+
+            <article class="team-member reveal">
+              <div class="team-member__photo">
+                <div class="team-member__photo-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                  <span>Photo à ajouter</span>
+                </div>
+              </div>
+              <div class="team-member__body">
+                <p class="team-member__name">Prénom Nom</p>
+                <p class="team-member__role">Chef conducteur de équipement</p>
+                <p class="team-member__bio">
+                  Plus de 20 ans sur les équipements print grand format. Son œil sur les tons directs, les surcharges et les repères est une garantie en soi.
+                </p>
+                <span class="team-member__dept">Création print</span>
+              </div>
+            </article>
+
+            <article class="team-member reveal reveal-delay-1">
+              <div class="team-member__photo">
+                <div class="team-member__photo-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                  <span>Photo à ajouter</span>
+                </div>
+              </div>
+              <div class="team-member__body">
+                <p class="team-member__name">Prénom Nom</p>
+                <p class="team-member__role">Conducteur(trice) de équipement</p>
+                <p class="team-member__bio">
+                  Précis et méthodique, il gère la mise en route, le calage et le contrôle qualité à chaque projet. Chaque feuille qui sort est inspectée.
+                </p>
+                <span class="team-member__dept">Création print</span>
+              </div>
+            </article>
+
+            <article class="team-member reveal reveal-delay-2">
+              <div class="team-member__photo">
+                <div class="team-member__photo-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                  <span>Photo à ajouter</span>
+                </div>
+              </div>
+              <div class="team-member__body">
+                <p class="team-member__name">Prénom Nom</p>
+                <p class="team-member__role">Assistant(e) de équipement</p>
+                <p class="team-member__bio">
+                  En appui sur les équipements grand format, il assure l'alimentation, le contrôle en cours de projet et la manutention des support visuels en sortie.
+                </p>
+                <span class="team-member__dept">Création print</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ── PÔLE FAÇONNAGE ──────────────────────────────── -->
+        <div class="dept-section">
+          <div class="dept-section__header">
+            <div class="dept-section__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h2 class="dept-section__title" id="dept-faconnage">Production &amp; finitions</h2>
+            <span class="dept-section__count">La touche finale</span>
+          </div>
+
+          <div class="team-full-grid">
+
+            <article class="team-member reveal">
+              <div class="team-member__photo">
+                <div class="team-member__photo-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                  <span>Photo à ajouter</span>
+                </div>
+              </div>
+              <div class="team-member__body">
+                <p class="team-member__name">Prénom Nom</p>
+                <p class="team-member__role">Responsable production</p>
+                <p class="team-member__bio">
+                  Coupe, pliage, rainage, reliure, finition premium — il orchestre l'studio de finition pour que chaque support arrive chez vous impeccable et prêt à l'emploi.
+                </p>
+                <span class="team-member__dept">Production</span>
+              </div>
+            </article>
+
+            <article class="team-member reveal reveal-delay-1">
+              <div class="team-member__photo">
+                <div class="team-member__photo-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                  <span>Photo à ajouter</span>
+                </div>
+              </div>
+              <div class="team-member__body">
+                <p class="team-member__name">Prénom Nom</p>
+                <p class="team-member__role">Opérateur(trice) finitions</p>
+                <p class="team-member__bio">
+                  Spécialiste du finition premium et du vernis mat, il donne à vos support visuels leur apparence et leur protection définitives. Précision et régularité à chaque passage.
+                </p>
+                <span class="team-member__dept">Production</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── NOS VALEURS ───────────────────────────────────────── -->
+    <section class="section" aria-labelledby="values-title">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:1rem;">
+          <span class="section-label reveal" aria-hidden="true">Ce qui nous anime</span>
+          <h2 class="section-title reveal" id="values-title">Nos valeurs au quotidien</h2>
+          <p class="section-intro reveal" style="margin-inline:auto;">
+            Pas de grandes formules : juste des engagements concrets que vous retrouverez à chaque échange avec notre équipe.
+          </p>
+        </div>
+        <div class="values-grid">
+          <div class="value-card reveal">
+            <div class="value-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="value-card__title">Écoute vraie</h3>
+            <p>Nous prenons le temps de comprendre votre projet avant de proposer. Pas de solution standard plaquée sur votre besoin.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-1">
+            <div class="value-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="value-card__title">Exigence technique</h3>
+            <p>Du fichier source à la livraison, chaque étape est contrôlée. Notre accréditation ISO 9001 le garantit.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-2">
+            <div class="value-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="value-card__title">Réactivité</h3>
+            <p>Devis sous 24h, interlocuteur unique, suivi en temps réel. Votre temps est précieux — nous le respectons.</p>
+          </div>
+          <div class="value-card reveal">
+            <div class="value-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="value-card__title">Responsabilité</h3>
+            <p>ISO 14001, B Corp, ISO 26000, label Label Excellence : nos engagements environnementaux et qualité se traduisent en certifications concrètes.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-1">
+            <div class="value-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="value-card__title">Fierté du travail fait</h3>
+            <p>Chaque support visuel qui sort de notre studio porte notre nom. Ce n'est pas de la fierté en paroles — c'est ce qui pousse notre équipe à se dépasser à chaque projet.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-2">
+            <div class="value-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3 class="value-card__title">Convivialité</h3>
+            <p>Venez nous voir, on fait des vrais cafés. Nos clients deviennent souvent des partenaires de longue date — et parfois des amis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Photo/Logo_La Déclinaison Responsive.png" alt="Logo NEXOVA" width="150">
+          <p class="footer__tagline">Transforme des pages blanches en projets qui vous ressemblent. Depuis 1970, au service de vos créations les plus exigeantes.</p>
+          <nav class="footer__social" aria-label="Réseaux sociaux NEXOVA">
+            <a href="#" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="NEXOVA sur LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="NEXOVA sur Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </nav>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link">Accueil</a></li>
+            <li><a href="expertise.html" class="footer__link">Expertises</a></li>
+            <li><a href="realisations.html" class="footer__link">Réalisations</a></li>
+            <li><a href="histoire.html" class="footer__link">Notre Histoire</a></li>
+            <li><a href="contact.html" class="footer__link">Contact &amp; Devis</a></li>
+            <li><a href="equipe.html" class="footer__link">Notre Équipe</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Nos expertises">
+          <p class="footer__col-title">Expertises</p>
+          <ul class="footer__links" role="list">
+            <li><a href="expertise.html" class="footer__link">Création Print</a></li>
+            <li><a href="expertise.html" class="footer__link">Grands Formats</a></li>
+            <li><a href="expertise.html" class="footer__link">Conception graphique</a></li>
+            <li><a href="expertise.html" class="footer__link">Finition premium &amp; Vernis mat</a></li>
+            <li><a href="expertise.html" class="footer__link">Production</a></li>
+            <li><a href="expertise.html" class="footer__link">Marquage &amp; Embossage</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <address class="footer__address">
+            <strong>NEXOVA</strong><br>
+            12 Rue des Studios<br>
+            75009 Paris<br><br>
+            <a href="tel:+33142001122">01 42 00 11 22</a><br>
+            <a href="mailto:contact@nexova-agence de communication.fr">contact@nexova-agence de communication.fr</a><br><br>
+            <span>Lun–Ven : 8h00–18h00</span>
+          </address>
+          <div style="margin-top:1.25rem;">
+            <a href="https://www.fnexova.fr" class="footer__link" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.4rem;">
+              Groupe FNEXOVA
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; <span id="current-year">2026</span> NEXOVA. Tous droits réservés.</p>
+        <nav class="footer__legal" aria-label="Liens légaux">
+          <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
+          <a href="cgv.html" class="footer__legal-link">CGV</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Retour en haut de page">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+  <button class="a11y-btn" aria-label="Options d'accessibilité" aria-expanded="false" aria-controls="a11y-panel">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M15.89 8.11C15.5 7.72 14.83 7 13 7h-2c-1.83 0-2.5.72-2.89 1.11l-3.31 3.3a.996.996 0 1 0 1.41 1.41L8 11v10h2v-5h4v5h2V11l1.79 1.82a.996.996 0 1 0 1.41-1.41l-3.31-3.31z"/></svg>
+  </button>
+  <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Options d'accessibilité" aria-modal="false">
+    <p class="a11y-panel__title">Accessibilité</p>
+    <div class="a11y-option"><span>Taille du texte</span>
+      <div class="a11y-toggle">
+        <button id="font-decrease" aria-label="Réduire la taille du texte">A−</button>
+        <button id="font-reset" aria-label="Réinitialiser la taille du texte">A</button>
+        <button id="font-increase" aria-label="Augmenter la taille du texte">A+</button>
+      </div>
+    </div>
+  <script src="main.js"></script>
+  <script src="interactions.js" defer></script>
+</body>
+</html>

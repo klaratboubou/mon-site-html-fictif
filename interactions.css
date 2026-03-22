@@ -1,0 +1,682 @@
+/* ============================================================
+   NEXOVA — interactions.css
+   Styles pour toutes les nouvelles interactions dynamiques
+   ============================================================ */
+
+/* ══════════════════════════════════════════════════════════
+   1. SPLASH SCREEN
+══════════════════════════════════════════════════════════ */
+#nexova-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+#nexova-splash.splash--exit {
+  opacity: 0;
+  transform: scale(1.03);
+  pointer-events: none;
+}
+
+.splash__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Lignes déco typographiques */
+.splash__lines {
+  position: absolute;
+  inset: -120px;
+  pointer-events: none;
+}
+
+.splash__lines span {
+  position: absolute;
+  background: rgba(194, 24, 91, 0.08);
+}
+
+.splash__lines span:nth-child(1) {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  animation: splashLine 1.2s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+.splash__lines span:nth-child(2) {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  animation: splashLine 1.4s cubic-bezier(.4,0,.2,1) .2s forwards;
+}
+
+.splash__lines span:nth-child(3) {
+  top: 30%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  animation: splashLine 1.6s cubic-bezier(.4,0,.2,1) .1s forwards;
+}
+
+@keyframes splashLine {
+  from { opacity: 0; transform: scaleX(0); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+
+.splash__logo {
+  opacity: 0;
+  animation: splashFadeUp 0.8s cubic-bezier(.4,0,.2,1) 0.4s forwards;
+}
+
+.splash__img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.splash__tagline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  opacity: 0;
+  animation: splashFadeUp 0.8s cubic-bezier(.4,0,.2,1) 0.7s forwards;
+}
+
+.splash__bar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+  animation: splashFadeUp 0.5s cubic-bezier(.4,0,.2,1) 0.9s forwards;
+}
+
+.splash__progress {
+  height: 100%;
+  width: 0%;
+  background: #c2185b;
+  border-radius: 2px;
+  transition: width 0.08s linear;
+}
+
+@keyframes splashFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   2. BARRE DE PROGRESSION DE LECTURE
+══════════════════════════════════════════════════════════ */
+#reading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #c2185b, #f48fb1);
+  z-index: 10000;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   3. POPUP DE SORTIE
+══════════════════════════════════════════════════════════ */
+#exit-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+#exit-popup.exit-popup--visible {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.exit-popup__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.exit-popup__card {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 440px;
+  width: calc(100% - 2rem);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+  text-align: center;
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+#exit-popup.exit-popup--visible .exit-popup__card {
+  transform: translateY(0) scale(1);
+}
+
+.exit-popup__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #7a7a7a;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.exit-popup__close svg { width: 16px; height: 16px; }
+
+.exit-popup__close:hover {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.exit-popup__icon {
+  width: 56px;
+  height: 56px;
+  background: #fce4ec;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: #c2185b;
+}
+
+.exit-popup__icon svg { width: 24px; height: 24px; }
+
+.exit-popup__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c2185b;
+  margin-bottom: 0.5rem;
+}
+
+.exit-popup__title {
+  font-family: 'TitreCustom', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.exit-popup__text {
+  font-size: 0.875rem;
+  color: #3d3d3d;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.exit-popup__form {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.exit-popup__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e0ddd7;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  background: #F8F6F2;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.exit-popup__input:focus {
+  border-color: #c2185b;
+  box-shadow: 0 0 0 3px rgba(194,24,91,0.1);
+  background: #fff;
+}
+
+.exit-popup__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875em 1.5em;
+  background: #c2185b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.exit-popup__btn svg { width: 16px; height: 16px; }
+.exit-popup__btn:hover { background: #880e4f; transform: translateY(-1px); }
+
+.exit-popup__footer {
+  font-size: 0.75rem;
+  color: #7a7a7a;
+  margin-top: 1.25rem;
+}
+
+.exit-popup__footer a {
+  color: #c2185b;
+  font-weight: 600;
+}
+
+.exit-popup__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: #fce4ec;
+  border-radius: 10px;
+  color: #c2185b;
+}
+
+.exit-popup__success svg { width: 32px; height: 32px; }
+.exit-popup__success p { font-weight: 600; font-size: 0.875rem; }
+
+
+/* ══════════════════════════════════════════════════════════
+   4. FLOATING CTA (3 boutons latéraux)
+══════════════════════════════════════════════════════════ */
+#floating-cta {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+#floating-cta.floating-cta--visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(0);
+}
+
+.floating-cta__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6em 1em;
+  border-radius: 999px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.floating-cta__btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+.floating-cta__btn:hover {
+  transform: translateX(-4px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+}
+
+.floating-cta__phone {
+  background: #1a1a1a;
+  color: white;
+}
+
+.floating-cta__mail {
+  background: white;
+  color: #c2185b;
+  border: 1.5px solid #fce4ec;
+}
+
+.floating-cta__devis {
+  background: #c2185b;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  #floating-cta {
+    bottom: 5rem;
+    right: 0.75rem;
+  }
+  .floating-cta__btn span { display: none; }
+  .floating-cta__btn { padding: 0.65em 0.65em; }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   5. PREUVE SOCIALE TOAST
+══════════════════════════════════════════════════════════ */
+#social-proof-toast {
+  position: fixed;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  border: 1px solid #eeebe5;
+  border-radius: 999px;
+  padding: 0.6em 1.25em 0.6em 0.75em;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  z-index: 700;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  max-width: calc(100vw - 3.5rem);
+}
+
+#social-proof-toast.sp-toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sp-toast__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c2185b;
+  flex-shrink: 0;
+  animation: toastPulse 1.5s ease infinite;
+}
+
+@keyframes toastPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(194,24,91,0.4); }
+  50%       { box-shadow: 0 0 0 5px rgba(194,24,91,0); }
+}
+
+.sp-toast__text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  color: #3d3d3d;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   6. QUICK CONTACT (bloc rapide dans contact.html)
+══════════════════════════════════════════════════════════ */
+.quick-contact {
+  margin-bottom: 1.5rem;
+}
+
+.quick-contact__inner {
+  background: linear-gradient(135deg, #fce4ec 0%, rgba(194,24,91,0.05) 100%);
+  border: 1.5px solid rgba(194,24,91,0.2);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-contact__inner::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(194,24,91,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.quick-contact__icon {
+  width: 44px;
+  height: 44px;
+  background: #c2185b;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.quick-contact__icon svg { width: 20px; height: 20px; }
+
+.quick-contact__label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.2rem;
+}
+
+.quick-contact__sub {
+  font-size: 0.78rem;
+  color: #3d3d3d;
+}
+
+.quick-contact__action {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.quick-contact__input {
+  padding: 0.6rem 0.875rem;
+  border: 1.5px solid rgba(194,24,91,0.3);
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  background: white;
+  color: #1a1a1a;
+  outline: none;
+  min-width: 180px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.quick-contact__input:focus {
+  border-color: #c2185b;
+  box-shadow: 0 0 0 3px rgba(194,24,91,0.1);
+}
+
+.quick-contact__send {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6em 1em;
+  background: #c2185b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.quick-contact__send svg { width: 14px; height: 14px; }
+.quick-contact__send:hover { background: #880e4f; transform: translateY(-1px); }
+
+.quick-contact__success {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #c2185b;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.quick-contact__success svg { width: 20px; height: 20px; }
+
+@media (max-width: 900px) {
+  .quick-contact__inner {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+  .quick-contact__action {
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+  }
+  .quick-contact__input { min-width: 140px; flex: 1; }
+}
+
+@media (max-width: 600px) {
+  .quick-contact__inner {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .quick-contact__icon { display: none; }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   7. BADGE URGENCE & MINI-CTA DE SECTION
+══════════════════════════════════════════════════════════ */
+.urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4em 0.875em;
+  background: #fce4ec;
+  border: 1px solid rgba(194,24,91,0.25);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #c2185b;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.urgency-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c2185b;
+  animation: toastPulse 1.5s ease infinite;
+}
+
+.section-mini-cta {
+  text-align: center;
+  padding-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #7a7a7a;
+}
+
+.section-mini-cta__link {
+  color: #c2185b;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.section-mini-cta__link:hover { color: #880e4f; }
+
+
+/* ══════════════════════════════════════════════════════════
+   8. MICRO-INTERACTIONS GLOBALES
+══════════════════════════════════════════════════════════ */
+
+/* Pulse sur les boutons de contact principaux */
+.btn-primary {
+  position: relative;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid rgba(194,24,91,0.4);
+  animation: btnPulse 2.5s ease-out infinite;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes btnPulse {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Téléphone toujours visible dans le hero CTA */
+a[href^="tel"] .btn {
+  position: relative;
+}
+
+/* Reveal amélioré avec stagger supporté */
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.reveal { transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal-left { transform: translateX(-28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal-right { transform: translateX(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+
+.reveal.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-delay-1 { transition-delay: 80ms !important; }
+.reveal-delay-2 { transition-delay: 160ms !important; }
+.reveal-delay-3 { transition-delay: 240ms !important; }
+
+
+/* ══════════════════════════════════════════════════════════
+   9. RESPONSIVITÉ GÉNÉRALE DES NOUVEAUX ÉLÉMENTS
+══════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  #social-proof-toast {
+    left: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .exit-popup__title { font-size: 1.25rem; }
+  .exit-popup__card { padding: 1.75rem 1.25rem; }
+}
